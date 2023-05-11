@@ -360,17 +360,17 @@ List<EntityMetaData> entityMetadataList = entityMetadataSerive.getEntityMetaData
 		
 		
 		
-	     log.info("inside QR code code please work ");   // for qrcode 
+	    log.info("inside QR code code please work ");   // for qrcode 
 		
 		
 		
-		 log.info("Main tempTemplate::" + tempTemplate);   // we are priniting the complete html page 
+		log.info("Main tempTemplate::" + tempTemplate);   // we are priniting the complete html page 
 		 
-		 String[] mainTableContent = StringUtils.substringsBetween(tempTemplate, "<!-- mainbody Starts here -->",
+		String[] mainTableContent = StringUtils.substringsBetween(tempTemplate, "<!-- mainbody Starts here -->",
 					"<!-- mainbody Ends here -->");
 					
 					
-		 log.info("Main containt::" + mainTableContenttemp);
+		log.info("Main containt::" + mainTableContenttemp);
 		 
 		 
 		Now we are working on html body content here 
@@ -442,7 +442,7 @@ List<EntityMetaData> entityMetadataList = entityMetadataSerive.getEntityMetaData
 ==================================================================  KCONFIG  ======================================================================
 
 
-==================================================================  UPLOAD =====================================================================
+==================================================================  BLUK UPLOAD =====================================================================
 
 On start call belowe thing will come as response 
 
@@ -569,7 +569,7 @@ response for above request
 
 
 
-==================================================================  UPLOAD  ======================================================================
+==================================================================  BLUK UPLOAD  ======================================================================
 
 
 ==================================================================  WAIT  ======================================================================
