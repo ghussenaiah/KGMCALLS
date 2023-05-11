@@ -1,4 +1,107 @@
 
+================================================================== WHILE USER LOGIN ============================================================
+
+/getDashboard 
+
+PresentationRuntimeResourceController class will be called 
+
+
+it will call https://localhost:9099/loadtest/user/widget/todo?userId=admin  for notification on the dashbaord view 
+
+
+this notification will be created based on link step of the process 
+
+it will called from BusinessProcessActionResolver class 
+
+it will try to fetch the data from notification table based on 'userId' and widgetType ='TODO' and status='OPEN' AND order by notif.createdTime desc;
+
+from the resultset it will create list of  UserDashboardNotification objects for every row of notification table 
+
+table can have transactionEntityId which represent actual transactionid which is resposible for creating this todo record 
+
+this how we are calculating the time difference 
+
+based on display name it will create multiple cards 
+
+notificationprocess 
+notificationprocessstep which represent from which procss it has been trigged 
+
+
+targetprocess means it represent the it will rediect to the process when we click on notification message 
+
+
+
+
+	private String timeAgo(Timestamp time_ago,String token) {
+
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone(dateUtils.getZoneShortName(offsetUtils.getOffset(token))));
+		cal.setTimeInMillis((time_ago).getTime());
+
+		long cur_time = (Calendar.getInstance(TimeZone.getTimeZone(dateUtils.getZoneShortName(offsetUtils.getOffset(token)))).getTimeInMillis());
+		long time_elapsed = (cur_time - cal.getTimeInMillis())/1000;
+		long seconds = time_elapsed;
+		int minutes = Math.round(time_elapsed / 60);
+		int hours = Math.round(time_elapsed / 3600);
+		int days = Math.round(time_elapsed / 86400);
+		int weeks = Math.round(time_elapsed / 604800);
+		int months = Math.round(time_elapsed / 2600640);
+		int years = Math.round(time_elapsed / 31207680);
+
+		// Seconds
+		if (seconds <= 60) {
+			return ClassConstants.JUST_NOW;
+		}
+		//Minutes
+		else if (minutes <= 60) {
+			if (minutes == 1) {
+				return ClassConstants.ONE_MINUTE_AGO;
+			} else {
+				return minutes + ClassConstants.MINUTES_AGO;
+			}
+		}
+		//Hours
+		else if (hours <= 24) {
+			if (hours == 1) {
+				return ClassConstants.AN_HOUR_AGO;
+			} else {
+				return hours + ClassConstants.HRS_AGO;
+			}
+		}
+		//Days
+		else if (days <= 7) {
+			if (days == 1) {
+				return ClassConstants.YESTERDAY;
+			} else {
+				return days + ClassConstants.DAYS_AGO;
+			}
+		}
+		//Weeks
+		else if (weeks <= 4.3) {
+			if (weeks == 1) {
+				return ClassConstants.A_WEEK_AGO;
+			} else {
+				return weeks + ClassConstants.WEEKS_AGO;
+			}
+		}
+		//Months
+		else if (months <= 12) {
+			if (months == 1) {
+				return ClassConstants.A_MONTH_AGO;
+			} else {
+				return months + ClassConstants.MONTHS_AGO;
+			}
+		}
+		//Years
+		else {
+			if (years == 1) {
+				return ClassConstants.ONE_YEAR_AGO;
+			} else {
+				return years + ClassConstants.YEARS_AGO;
+			}
+		}
+	}
+
+================================================================== WHILE USER LOGIN ============================================================
 
 
 ==================================================================  CREATE  ======================================================================
@@ -586,11 +689,7 @@ response for above request
 
 
 
-================================================================== WHILE USER LOGIN ============================================================
 
-/getDashboard 
-
-PresentationRuntimeResourceController class will be called 
 
 
 
