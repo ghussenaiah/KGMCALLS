@@ -1,0 +1,1396 @@
+
+Good receipts whdetails sumif function need to verfiy 
+
+embeeded to embeeded 1-m relation pojo class need to check 
+
+kago call 1-m relation not null 
+
+associate directory need to check 
+
+
+
+ttps://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_34/subModule_115/BP_GRN_1618694
+https://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_19/subModule_120/BP_lpoNew_2303934
+https://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_19/subModule_132/BP_FPONew_2310077
+https://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_6/subModule_199/BP_LoansIssue_2512587
+https://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_6/subModule_199/BP_ApproveLoans_2512085
+https://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_6/subModule_199/BP_Loans_2512036
+https://localhost:7070/kagami-studio/#/workarea/project/project_4/process-builder/module_6/subModule_187/BP_AssociateDirectory_2520310
+
+========================================= Pc child View =================================================================================
+
+PurchaseOrder.PurchaseRequest.status        Is Not (All )  literal   1- closed  
+
+// writting on pcchild view of submit button if all multi dropdown of purchase request are closed then only submit trigger should be enabled  
+
+
+========================================= Pc child View =================================================================================
+
+
+
+
+========================================= Issues =========================================================================================
+
+sms are not triggering 
+ objects.put("Indent_20",indent_20);
+
+                                       objects.put("PurchaseOrder_32",purchaseOrder_32);
+
+
+
+										( local.temp1  = kagorithm_29.IndenttoPOItemsCreation(processIdentifier, uiEvent,txnInfoHolder,indent_20.id));
+
+
+
+                                        ( purchaseOrder_32.errorMessage = ( ( local.temp1 ) ) );
+    end
+
+========================================= Issues =========================================================================================
+
+
+=========================================Pending ==========================================================================================
+
+pick atttribute will have db column 
+
+if we remove any relation then impact of create form and view form =====================================================================> PENDING 
+
+fetch exchnage rate from third part table  and policy              =====================================================================> PENDING
+
+TASK 12 In the create form on basis of grn reference type we have to clear embdded lines = =============================================> PENDING
+
+
+How stored procedures are creating code                            =====================================================================> PENDING
+
+kaog call single relation drop down                         =============================================================================> DONE
+kago call on multi select relation lov                     ==============================================================================> DONE
+
+pick attrutes in create form                                        =====================================================================> PENDING
+
+studio tenate configuration for multple projects how it is working  =====================================================================> PENDING
+
+calenadar view  =========================================================================================================================> PENDING 
+
+ view  =========================================================================================================================> PENDING
+
+========================================= Pending =========================================================================================
+
+========================================= Tricks ===========================================================================================
+
+
+* if we add any new relation then if it not updated in create form then we can take some new step with create form the take attribute presentaion from 
+presentaion rules copy to existing create presentation then on save it will take of onchange event and subprocess 
+
+* conver pi to goods receipt note items lines converion on formrules 
+
+
+========================================= Tricks ===========================================================================================
+
+
+========================================= Quaries =================================================================================================
+
+what is mapped attribute and related entity mapped attribute in relations                                ====================================> DONE 
+
+attribute hide not workig    ( we need to remove uncheck of visible property then nee d to write the condition then it will work )   ========> DONE
+
+Disable multi select drop down based on radio button done but other drop down data should disable by using reset option 
+
+========================================= Quaries ================================================================================================
+
+========================================= Notes ===========================================================================================
+
+All java policy function is written as functions in mysql 
+
+while login if any entity wants load at the initial time we can write process with ds fetchs steps in in Global process (module ) ==>  user loign (sub module ) 
+ 
+
+Employee entity can be loaded by using below step here rhs will assign when we login
+
+Employee.User.userId       is  variable          UserContext.user.userId
+
+Assign properties we can see in policy file these are assigned aftrer policy fire 
+
+
+========================================= Notes ===========================================================================================
+
+========================================= Mysql Queries ===============================
+
+
+
+SELECT * FROM loadtest_kagamierp.grn_5 order by createdatetime desc;
+SELECT * FROM loadtest_kagamierp.grn_5__item_10;
+SELECT * FROM loadtest_kagamierp.grn_5__country_7;
+SELECT * FROM loadtest_kagamierp.grn_5__vehicle_9;
+SELECT * FROM loadtest_kagamierp.item_10;
+SELECT * FROM loadtest_kagamierp.item_10__whdetails_25;
+SELECT * FROM loadtest_kagamierp.whdetails_25;
+
+SELECT * FROM loadtest_kagamierp.state_23;
+SELECT * FROM loadtest_kagamierp.city_22;
+SELECT * FROM loadtest_kagamierp.area_24;
+SELECT * FROM loadtest_kagamierp.vendor_8;
+SELECT * FROM loadtest_kagamierp.statuscycle_13;
+
+
+
+================================================================== Create Form  ==============================================================
+
+TASK 1 Entity Pojo Class 
+
+
+GRN - TAXRATE      (1-1) (T-T)
+GRN - COUNTRY      (1-M) (T-T)
+
+GRN - STATUSCYCLE  (1-1) (T-M)
+GRN - VEHICLE      (1-M) (T-M)
+
+GRN - GRN          (1-1) (T-T) SELF RELATION
+
+GRN - TAXCOMPONENT (1-1) (T-E)
+GRN - ITEM         (1-M) (T-E)
+
+
+
+
+GRN - COUNTRY (1-M) (T-T)
+GRN - COUNTRY (1-M) (T-T)
+GRN - COUNTRY (1-M) (T-T)
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+TASK 2 Drl File For  Create Form Rules Assigning the all types of Fileds including the master default value in the form rules but  Time and Boolean 
+and File Attibutes are not added in this usecase 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package policy_666
+
+package policy_666
+
+import com.google.common.`collect`.Multimap
+import com.bcv.kagami.core.utils.policy.helper.SqlResult
+import com.bcv.kagami.core.utils.policy.PolicyUtils
+import com.bcv.kagami.core.databinder.repository.entity.EntityDefaultValueRepository;
+import com.bcv.kagami.core.runtimecontext.ProcessIdentifier;
+import com.bcv.kagami.core.session.context.TreeUIEvent;
+import com.bcv.kagami.core.container.contract.data.process.TxnWrapper;
+import com.bcv.kagami.core.container.contract.data.process.TxnInfoHolder;
+import com.bcv.kagami.core.utils.beans.KagamiBeanUtils;
+import com.bcv.kagami.core.utils.policy.KSubProcessListUtils;
+import com.bcv.kagami.core.utils.policy.helper.StoredProcedureRuntimeService;
+import com.bcv.kagami.core.container.context.policy.RuleOutputContext;
+import com.bcv.kagami.runtime.policy.rule.service.impl.ResolveType;
+
+import java.util.*
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+import com.bcv.kagami.modules.model.Grn_5
+
+dialect "mvel"
+
+declare Local_policy_666
+index :int
+clear : boolean
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_666 local = new Local_policy_666();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+		resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_666()
+                                        grn_5 : Grn_5()
+                                        eval(true);
+
+    then
+                System.out.println("performing compute: policy_666->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("Grn_5",grn_5);
+
+
+
+
+                                        ( grn_5.grnDate = policyUtils.convertDate("today","DATE") );
+
+
+                                        ( grn_5.grnDateTime = policyUtils.convertDate("today+1","dateTime") );
+
+
+                                        ( grn_5.grnText = ( "Hello" ) );
+
+
+                                        ( grn_5.grnLongText = "awqqeqweqweqwe" );
+
+
+                                        ( grn_5.grnNumber = ( 3434 ) );
+
+
+                                        ( grn_5.grnEmail = ( "akash922.g@gmail.com" ) );
+
+
+                                        ( grn_5.vendorId = 0 );
+    end
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Policy For Calling Kago From Create Form Rules 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package policy_20947
+
+import com.google.common.`collect`.Multimap
+import com.bcv.kagami.core.utils.policy.helper.SqlResult
+import com.bcv.kagami.core.utils.policy.PolicyUtils
+import com.bcv.kagami.core.databinder.repository.entity.EntityDefaultValueRepository;
+import com.bcv.kagami.core.runtimecontext.ProcessIdentifier;
+import com.bcv.kagami.core.session.context.TreeUIEvent;
+import com.bcv.kagami.core.container.contract.data.process.TxnWrapper;
+import com.bcv.kagami.core.container.contract.data.process.TxnInfoHolder;
+import com.bcv.kagami.core.utils.beans.KagamiBeanUtils;
+import com.bcv.kagami.core.utils.policy.KSubProcessListUtils;
+import com.bcv.kagami.core.utils.policy.helper.StoredProcedureRuntimeService;
+import com.bcv.kagami.core.container.context.policy.RuleOutputContext;
+import com.bcv.kagami.runtime.policy.rule.service.impl.ResolveType;
+
+import java.util.*
+import com.bcv.kagami.modules.model.BP_PurchaseOrderCreation_67_36
+import com.bcv.kagami.modules.model.PurchaseOrder_32
+import com.bcv.kagami.kagorithm.Kagorithm_29
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.modules.model.Indent_20
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+
+dialect "mvel"
+
+declare Local_policy_20947
+index :int
+clear : boolean
+   temp1 : String
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_20947 local = new Local_policy_20947();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+        resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_20947()
+                                        purchaseOrder_32 : PurchaseOrder_32()
+                                        eval(true);
+
+    then
+                System.out.println("performing compute: policy_20947->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("PurchaseOrder_32",purchaseOrder_32);
+
+
+
+
+                                        if( purchaseOrder_32.orderDate  == null
+                                                 ) {
+                                        ( purchaseOrder_32.orderDate = policyUtils.convertDate("today","DATE") );
+                                }
+    end
+
+rule "rule_2"
+salience 9
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+        resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_20947()
+                                        indent_20 : Indent_20()
+                                        purchaseOrder_32 : PurchaseOrder_32()
+                                        eval(true);
+
+         kagorithm_29 : Kagorithm_29()
+    then
+                System.out.println("performing compute: policy_20947->rule_2");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+						 objects.put("Indent_20",indent_20);
+
+                                       objects.put("PurchaseOrder_32",purchaseOrder_32);
+
+
+
+                        ( local.temp1  = kagorithm_29.IndenttoPOItemsCreation(processIdentifier, uiEvent,txnInfoHolder,indent_20.id));
+
+
+
+                                        ( purchaseOrder_32.errorMessage = ( ( local.temp1 ) ) );
+    end
+
+
+ -------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                                                                             
+
+TASK 3 SumIf Function for Calculatin the embeeded sum into parent attribute   ( item qty to grn quantity )
+ 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+package policy_946
+
+import com.google.common.`collect`.Multimap
+import com.bcv.kagami.core.utils.policy.helper.SqlResult
+import com.bcv.kagami.core.utils.policy.PolicyUtils
+import com.bcv.kagami.core.databinder.repository.entity.EntityDefaultValueRepository;
+import com.bcv.kagami.core.runtimecontext.ProcessIdentifier;
+import com.bcv.kagami.core.session.context.TreeUIEvent;
+import com.bcv.kagami.core.container.contract.data.process.TxnWrapper;
+import com.bcv.kagami.core.container.contract.data.process.TxnInfoHolder;
+import com.bcv.kagami.core.utils.beans.KagamiBeanUtils;
+import com.bcv.kagami.core.utils.policy.KSubProcessListUtils;
+import com.bcv.kagami.core.utils.policy.helper.StoredProcedureRuntimeService;
+import com.bcv.kagami.core.container.context.policy.RuleOutputContext;
+import com.bcv.kagami.runtime.policy.rule.service.impl.ResolveType;
+
+import java.util.*
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+import com.bcv.kagami.modules.model.Grn_5
+import com.bcv.kagami.modules.model.Item_10
+
+dialect "mvel"
+
+declare Local_policy_946
+index :int
+clear : boolean
+   temp1 : Double
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_946 local = new Local_policy_946();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+		  resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_946()
+                                        grn_5 : Grn_5()
+                                        eval(true);
+
+    then
+                System.out.println("performing compute: policy_946->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("Grn_5",grn_5);
+
+
+
+
+Double sumif_01 = 0;
+            foreach(Item_10 item_10:grn_5.Item_10){
+           sumif_01 = sumif_01 +  ( ( item_10.rate ) ) ;
+           }
+
+                ( local.temp1 = sumif_01);
+
+
+                                        ( grn_5.grnNumber = ( ( local.temp1 ) ) );
+    end
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+TASK 4 SumIf Function Calculatin the embeeded sum into Parent Attibute  ( whdetails qty to item quantity )
+
+
+
+package policy_1004
+
+import com.google.common.`collect`.Multimap
+import com.bcv.kagami.core.utils.policy.helper.SqlResult
+import com.bcv.kagami.core.utils.policy.PolicyUtils
+import com.bcv.kagami.core.databinder.repository.entity.EntityDefaultValueRepository;
+import com.bcv.kagami.core.runtimecontext.ProcessIdentifier;
+import com.bcv.kagami.core.session.context.TreeUIEvent;
+import com.bcv.kagami.core.container.contract.data.process.TxnWrapper;
+import com.bcv.kagami.core.container.contract.data.process.TxnInfoHolder;
+import com.bcv.kagami.core.utils.beans.KagamiBeanUtils;
+import com.bcv.kagami.core.utils.policy.KSubProcessListUtils;
+import com.bcv.kagami.core.utils.policy.helper.StoredProcedureRuntimeService;
+import com.bcv.kagami.core.container.context.policy.RuleOutputContext;
+import com.bcv.kagami.runtime.policy.rule.service.impl.ResolveType;
+
+import java.util.*
+import com.bcv.kagami.modules.model.Whdetails_25
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+import com.bcv.kagami.modules.model.Item_10
+
+dialect "mvel"
+
+declare Local_policy_1004
+index :int
+clear : boolean
+   temp1 : Double
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_1004 local = new Local_policy_1004();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+		  spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+        resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_1004()
+                                        item_10 : Item_10()
+                                        eval(true);
+
+    then
+                System.out.println("performing compute: policy_1004->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("Item_10",item_10);
+
+
+
+
+Double sumif_01 = 0;
+            foreach(Whdetails_25 whdetails_25:item_10.Whdetails_25){
+           sumif_01 = sumif_01 +  ( ( whdetails_25.qty ) ) ;
+           }
+
+                ( local.temp1 = sumif_01);
+
+
+                                        ( item_10.quantity = ( ( local.temp1 ) ) );
+    end
+
+                                            
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TASK 5 Dependent attribute selction in ware house -> warehous -> location -> rack 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TASK 6  Disable multi select drop down based on radio button done 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TASK 7 calling kago on multi select attributes  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TASK 8 Business validation on attribute
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TASK 9  In create form for filtering any lovs data and form rules also we no need to add double quotes for string and number exampple 
+        
+		On Grn Create Page for fecthing 
+		
+		
+		LocalPo.vendorId        is       variable     GrnHeader.vendorId
+		LocalPo.statusRemark    is       literal      Approved-PO
+		
+		
+		form rules 
+		
+		GrnHeader.exchangerate   is literal   1
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TASK 10 How to show comma separated values in create form for number fields 
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TASK 11 Adding currenty attribute prefix for number fields 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TASK 12 In the create form on basis of grn reference type we have to clear embdded lines 
+
+        if same selction comes do nothing if different selection comes then need to crear 
+		
+		for grn ref drown down kago call  Data -> Formula 
+		
+		
+		GrnHeader.grnReferenceId   is Not variable AuxiliaryEntity.ref 
+		
+		
+		GrnHeader.grnReferenceId  compute GRNClear[]
+		AuxiliaryEntity.ref       compute GrnHeader.grnReferenceId
+		
+		
+		
+		
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+TASK 13 calling kago on signle relation dropdown pollicy 
+
+
+
+package policy_1500
+
+import com.google.common.`collect`.Multimap
+import com.bcv.kagami.core.utils.policy.helper.SqlResult
+import com.bcv.kagami.core.utils.policy.PolicyUtils
+import com.bcv.kagami.core.databinder.repository.entity.EntityDefaultValueRepository;
+import com.bcv.kagami.core.runtimecontext.ProcessIdentifier;
+import com.bcv.kagami.core.session.context.TreeUIEvent;
+import com.bcv.kagami.core.container.contract.data.process.TxnWrapper;
+import com.bcv.kagami.core.container.contract.data.process.TxnInfoHolder;
+import com.bcv.kagami.core.utils.beans.KagamiBeanUtils;
+import com.bcv.kagami.core.utils.policy.KSubProcessListUtils;
+import com.bcv.kagami.core.utils.policy.helper.StoredProcedureRuntimeService;
+import com.bcv.kagami.core.container.context.policy.RuleOutputContext;
+import com.bcv.kagami.runtime.policy.rule.service.impl.ResolveType;
+
+import java.util.*
+import com.bcv.kagami.modules.model.BP_creategrn_54_28
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+import com.bcv.kagami.kagorithm.Kagorithm_3
+import com.bcv.kagami.modules.model.Grn_5
+
+dialect "mvel"
+
+declare Local_policy_1500
+index :int
+clear : boolean
+   temp1 : String
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_1500 local = new Local_policy_1500();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+  txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+        resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_1500()
+                                        grn_5 : Grn_5()
+                                        eval(true);
+
+         kagorithm_3 : Kagorithm_3()
+    then
+                System.out.println("performing compute: policy_1500->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("Grn_5",grn_5);
+
+
+
+
+                          if((( grn_5.vendorId  !=  null  &&  grn_5.vendorId  != ""))){
+
+
+
+                if (resolveType.res == "mysql") {
+                    Map p_1051780063907336192 = new HashMap();
+
+( local.temp1 = (String)spRuntimeService.executeStoredProcedureFromPolicy("Kagorithm_3",ruleOutputContext, processIdentifier, p_1051780063907336192 ));;
+        } else {
+                        ( local.temp1  = kagorithm_3.testkago(processIdentifier, uiEvent,txnInfoHolder));
+        }
+
+
+
+                                        ( grn_5.vendorId = ( ( local.temp1 ) ) );
+                          }
+    end
+
+		
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Grn.Country.id    Is Not(Any)   keyword           null 
+
+TASK 14 calling kago on signle multi relation dropdown pollicy we are able to iterate all the multiselect dropdown values in the kago 
+
+
+package policy_1528
+
+import com.google.common.`collect`.Multimap
+import com.bcv.kagami.core.utils.policy.helper.SqlResult
+import com.bcv.kagami.core.utils.policy.PolicyUtils
+import com.bcv.kagami.core.databinder.repository.entity.EntityDefaultValueRepository;
+import com.bcv.kagami.core.runtimecontext.ProcessIdentifier;
+import com.bcv.kagami.core.session.context.TreeUIEvent;
+import com.bcv.kagami.core.container.contract.data.process.TxnWrapper;
+import com.bcv.kagami.core.container.contract.data.process.TxnInfoHolder;
+import com.bcv.kagami.core.utils.beans.KagamiBeanUtils;
+import com.bcv.kagami.core.utils.policy.KSubProcessListUtils;
+import com.bcv.kagami.core.utils.policy.helper.StoredProcedureRuntimeService;
+import com.bcv.kagami.core.container.context.policy.RuleOutputContext;
+import com.bcv.kagami.runtime.policy.rule.service.impl.ResolveType;
+
+import java.util.*
+import com.bcv.kagami.modules.model.BP_creategrn_54_28
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.modules.model.Country_7
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+import com.bcv.kagami.kagorithm.Kagorithm_4
+import com.bcv.kagami.modules.model.Grn_5
+
+dialect "mvel"
+
+declare Local_policy_1528
+index :int
+clear : boolean
+   temp1 : String
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_1528 local = new Local_policy_1528();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+		txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+        resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_1528()
+                                        grn_5 : Grn_5()
+                                        bP_creategrn_54_28 : BP_creategrn_54_28()
+                                        eval(true);
+
+         kagorithm_4 : Kagorithm_4()
+    then
+                System.out.println("performing compute: policy_1528->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("Grn_5",grn_5);
+
+                                       objects.put("BP_creategrn_54_28",bP_creategrn_54_28);
+
+
+
+
+                                 boolean anyFlg = false;
+                             foreach(Country_7 country_7:grn_5.Country_7){
+                        
+                                  if((( country_7.id  !=  null  &&  country_7.id  != "")) && !anyFlg) {
+                                                        anyFlg = true;
+                                                 }
+                             }
+                                       if(anyFlg){
+
+
+
+                if (resolveType.res == "mysql") {
+                    Map p_1051780063974445056 = new HashMap();
+
+( local.temp1 = (String)spRuntimeService.executeStoredProcedureFromPolicy("Kagorithm_4",ruleOutputContext, processIdentifier, p_1051780063974445056 ));;
+        } else {
+                        ( local.temp1  = kagorithm_4.kagomultiselectcall(processIdentifier, uiEvent,txnInfoHolder));            
+        }
+                                        ( bP_creategrn_54_28.text = ( ( local.temp1 ) ) );
+                          }
+    end
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+TASK 1
+TASK 1
+TASK 1
+TASK 1
+TASK 1
+TASK 1
+TASK 1
+TASK 1
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+==========================================   SMS CHECK ================================================================================================================
+
+https://api.bigmsgbox.com/message/send-sms?Apikey=RL843FQT&Apisecret=XL3V8GAF&to=917075459707&Message=Dear%20Customer,%20%20Please%20find%20the%20below%20details%20of%20your%20puchase.%20%20Invoice%20No:%20DCGL/SIN/2022/11122%20Date%20:%20Aug%2010,%202022,%205:38:19%20PMGrade:%C2%A0%20CEMENT%20-%2032.5%20R%20GRADENo%20of%20Bags:%20300%20Destination%20:%20HOHOETransporter%20Name:%20ALEXVehi%20cle%20No:%20GR%204537-PDriver%20Name:%20T.T%20%20Regards&from=DCGL
+
+ http://dcglonpremise.kagamierp.com:7070/kagami-studio/#/workarea/project/project_291/process-builder/System_Process_Module/Master_Process_Sub_Module/BP_customerWeeklySms_6696145
+ 
+ 
+ 
+ 
+sms_source = DCGL
+sms_password = XL3V8GAF
+sms_userName = RL843FQT
+sms_URL = https://api.bigmsgbox.com/message/send-sms
+sms_vendor = bigmsgbox
+
+ 
+
+=======================================================================================================================================================================
+
+
+
+package com.bcv.kagami.modules.model;
+
+import javax.validation.constraints.NotEmpty;
+import com.bcv.kagami.core.utils.generation.javacode.annotations.CustomCodeGenerater;
+import javax.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.validation.constraints.NotNull;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.Parameter;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import javax.persistence.Lob;
+import javax.persistence.Convert;
+import org.hibernate.validator.constraints.Email;
+import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ForeignKey;
+import org.javers.core.metamodel.annotation.DiffIgnore;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinTable;
+import javax.validation.Valid;
+import javax.persistence.OneToMany;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import javax.persistence.OneToOne;
+import javax.persistence.Entity;
+import com.bcv.kagami.core.utils.constant.entity.MasterEntity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import java.util.Date;
+import java.io.File;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.util.Set;
+import java.util.LinkedHashSet;
+import java.io.Serializable;
+import com.bcv.kagami.core.utils.commons.Utils;
+import java.util.List;
+import com.bcv.kagami.core.container.model.entity.defaultvalue.AttributeDefaultValue;
+import com.bcv.kagami.core.utils.db.customTypes.DateTimeType;
+import com.bcv.kagami.core.utils.mapper.filter.CustomDateTimeDeserializer;
+import com.bcv.kagami.core.utils.mapper.filter.CustomDateDeserializer;
+import com.bcv.kagami.core.utils.mapper.filter.CustomDateTimeSerializer;
+import com.bcv.kagami.core.utils.mapper.filter.CustomDateSerializer;
+import com.bcv.kagami.core.utils.mapper.filter.CustomDoubleSerializer;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.javers.core.metamodel.annotation.ShallowReference;
+import org.hibernate.envers.NotAudited;
+import com.vladmihalcea.hibernate.type.json.JsonStringType;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+import com.bcv.kagami.core.container.runtime.model.*;
+import com.bcv.kagami.core.utils.constant.entity.*;
+import javax.persistence.UniqueConstraint;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.TypeDef;
+
+@Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "id", name = "pk_grn_5id"), name = "grn_5")
+@JsonIgnoreProperties(ignoreUnknown = true)
+@TypeDef(name = "dateTimeType", typeClass = com.bcv.kagami.core.utils.db.customTypes.DateTimeType.class)
+@TypeDef(name = "encryptedString", typeClass = org.jasypt.hibernate5.type.EncryptedStringType.class, parameters = @Parameter(name = "encryptorRegisteredName", value = "myHibernateStringEncryptor"))
+@TypeDef(name = "encryptedNumber", typeClass = com.bcv.kagami.core.utils.db.customTypes.EncryptedBigDecimalTypeCustom.class, parameters = @Parameter(name = "encryptorRegisteredName", value = "myHibernateNumberEncryptor"))
+@TypeDef(name = "json", typeClass = com.vladmihalcea.hibernate.type.json.JsonStringType.class, parameters = @Parameter(name = "encryptorRegisteredName", value = "myHibernateNumberEncryptor"))
+@TypeDef(name = "jsonb", typeClass = com.vladmihalcea.hibernate.type.json.JsonBinaryType.class, parameters = @Parameter(name = "encryptorRegisteredName", value = "myHibernateNumberEncryptor"))
+public class Grn_5 extends TransactionEntity implements Serializable {
+
+	@NotEmpty
+	@CustomCodeGenerater(prefix = "")
+	@Column(nullable = false, name = "id")
+	@JsonProperty("id")
+	private String id;
+	@Column(name = "status")
+	@JsonProperty("status")
+	private String status;
+	@Column(name = "nextroles")
+	@JsonProperty("nextRoles")
+	private String nextRoles;
+	@NotNull
+	@Column(nullable = false, name = "grnnumber")
+	@JsonProperty("grnNumber")
+	private Double grnNumber;
+	@Column(name = "grndate")
+	@Type(type = "dateTimeType", parameters = @Parameter(name = "type", value = "date"))
+	@JsonDeserialize(using = com.bcv.kagami.core.utils.mapper.filter.CustomDateDeserializer.class)
+	@JsonSerialize(using = com.bcv.kagami.core.utils.mapper.filter.CustomDateSerializer.class)
+	@JsonProperty("grnDate")
+	private Date grnDate;
+	@Column(name = "taxratesid")
+	@JsonProperty("taxRatesId")
+	private String taxRatesId;
+	@Column(name = "vendorid")
+	@JsonProperty("vendorId")
+	private String vendorId;
+	@Column(name = "selfgrnid")
+	@JsonProperty("selfGrnId")
+	private String selfGrnId;
+	@Column(name = "grntext")
+	@JsonProperty("grnText")
+	private String grnText;
+	@Column(name = "grndatetime")
+	@Type(type = "dateTimeType", parameters = @Parameter(name = "type", value = "dateTime"))
+	@JsonDeserialize(using = com.bcv.kagami.core.utils.mapper.filter.CustomDateTimeDeserializer.class)
+	@JsonSerialize(using = com.bcv.kagami.core.utils.mapper.filter.CustomDateTimeSerializer.class)
+	@JsonProperty("grnDateTime")
+	private Date grnDateTime;
+	@Column(name = "grnlongtext")
+	@Lob
+	@JsonProperty("grnLongText")
+	private String grnLongText;
+	@Column(name = "grntime")
+	@Type(type = "dateTimeType", parameters = @Parameter(name = "type", value = "time"))
+	@JsonDeserialize(using = com.bcv.kagami.core.utils.mapper.filter.CustomDateTimeDeserializer.class)
+	@JsonSerialize(using = com.bcv.kagami.core.utils.mapper.filter.CustomDateTimeSerializer.class)
+	@JsonProperty("grnTime")
+	private Date grnTime;
+	@Column(name = "grnboolean")
+	@Convert(converter = com.bcv.kagami.core.utils.mapper.jpa.JpaBooleanToStringConverter.class)
+	@JsonProperty("grnBoolean")
+	private Boolean grnBoolean = Boolean.FALSE;
+	@Column(name = "grnfile")
+	@JsonProperty("grnfile")
+	private String grnfile;
+	@Email
+	@Column(name = "grnemail")
+	@JsonProperty("grnEmail")
+	private String grnEmail;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(referencedColumnName = "id", name = "taxratesid", updatable = false, foreignKey = @ForeignKey(name = "FK_Grn_5TaxRates_6"), insertable = false)
+	@JsonProperty("TaxRates_6")
+	@DiffIgnore
+	private TaxRates_6 TaxRates_6;
+	@JsonSerialize(as = java.util.LinkedHashSet.class)
+	@JsonDeserialize(as = java.util.LinkedHashSet.class)
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(joinColumns = @JoinColumn(referencedColumnName = "id", name = "grn_5id"), inverseJoinColumns = @JoinColumn(referencedColumnName = "id", name = "country_7id"), name = "grn_5__country_7")
+	@JsonProperty("Country_7")
+	@DiffIgnore
+	private Set<Country_7> Country_7 = new LinkedHashSet<>();
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(referencedColumnName = "id", name = "vendorid", updatable = false, foreignKey = @ForeignKey(name = "FK_Grn_5Vendor_8"), insertable = false)
+	@JsonProperty("Vendor_8")
+	@DiffIgnore
+	private Vendor_8 Vendor_8;
+	@JsonSerialize(as = java.util.LinkedHashSet.class)
+	@JsonDeserialize(as = java.util.LinkedHashSet.class)
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(joinColumns = @JoinColumn(referencedColumnName = "id", name = "grn_5id"), inverseJoinColumns = @JoinColumn(referencedColumnName = "id", name = "vehicle_9id"), name = "grn_5__vehicle_9")
+	@JsonProperty("Vehicle_9")
+	@DiffIgnore
+	private Set<Vehicle_9> Vehicle_9 = new LinkedHashSet<>();
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(referencedColumnName = "id", name = "selfgrnid", updatable = false, foreignKey = @ForeignKey(name = "FK_Grn_5selfGrn_5"), insertable = false)
+	@JsonProperty("selfGrn_5")
+	@DiffIgnore
+	private Grn_5 selfGrn_5;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(referencedColumnName = "id", name = "status", updatable = false, foreignKey = @ForeignKey(name = "FK_Grn_5StatusCycle_13"), insertable = false)
+	@JsonProperty("StatusCycle_13")
+	@DiffIgnore
+	private StatusCycle_13 StatusCycle_13;
+	@Valid
+	@JsonProperty("Item_10")
+	@JsonSerialize(as = java.util.LinkedHashSet.class)
+	@JsonDeserialize(as = java.util.LinkedHashSet.class)
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(fetch = FetchType.EAGER)
+	@Cascade(CascadeType.ALL)
+	@JoinTable(joinColumns = @JoinColumn(referencedColumnName = "id", name = "grn_5id"), inverseJoinColumns = @JoinColumn(referencedColumnName = "id", unique = true, name = "item_10id"), name = "grn_5__item_10")
+	private Set<Item_10> Item_10 = new LinkedHashSet<>();
+	@Valid
+	@JsonProperty("Taxcomponent_11")
+	@OneToOne(fetch = FetchType.EAGER)
+	@Cascade(CascadeType.ALL)
+	@JoinColumn(unique = true, name = "taxcomponent_11id", foreignKey = @ForeignKey(name = "FK_Grn_5Taxcomponent_11"))
+	private Taxcomponent_11 Taxcomponent_11;
+
+	@JsonIgnore
+	public String getId() {
+		return id;
+	}
+
+	@JsonIgnore
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	@JsonIgnore
+	public String getStatus() {
+		return status;
+	}
+
+	@JsonIgnore
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	@JsonIgnore
+	public String getNextRoles() {
+		return nextRoles;
+	}
+
+	@JsonIgnore
+	public void setNextRoles(String nextRoles) {
+		this.nextRoles = nextRoles;
+	}
+
+	@JsonIgnore
+	public Double getGrnNumber() {
+		return grnNumber;
+	}
+
+	@JsonIgnore
+	public void setGrnNumber(Double grnNumber) {
+		this.grnNumber = grnNumber;
+	}
+
+	@JsonIgnore
+	public Date getGrnDate() {
+		return grnDate;
+	}
+
+	@JsonIgnore
+	public void setGrnDate(Date grnDate) {
+		this.grnDate = grnDate;
+	}
+
+	@JsonIgnore
+	public String getTaxRatesId() {
+		return taxRatesId;
+	}
+
+	@JsonIgnore
+	public void setTaxRatesId(String taxRatesId) {
+		this.taxRatesId = taxRatesId;
+	}
+
+	@JsonIgnore
+	public String getVendorId() {
+		return vendorId;
+	}
+
+	@JsonIgnore
+	public void setVendorId(String vendorId) {
+		this.vendorId = vendorId;
+	}
+
+	@JsonIgnore
+	public String getSelfGrnId() {
+		return selfGrnId;
+	}
+
+	@JsonIgnore
+	public void setSelfGrnId(String selfGrnId) {
+		this.selfGrnId = selfGrnId;
+	}
+
+	@JsonIgnore
+	public String getGrnText() {
+		return grnText;
+	}
+
+	@JsonIgnore
+	public void setGrnText(String grnText) {
+		this.grnText = grnText;
+	}
+
+	@JsonIgnore
+	public Date getGrnDateTime() {
+		return grnDateTime;
+	}
+
+	@JsonIgnore
+	public void setGrnDateTime(Date grnDateTime) {
+		this.grnDateTime = grnDateTime;
+	}
+
+	@JsonIgnore
+	public String getGrnLongText() {
+		return grnLongText;
+	}
+
+	@JsonIgnore
+	public void setGrnLongText(String grnLongText) {
+		this.grnLongText = grnLongText;
+	}
+
+	@JsonIgnore
+	public Date getGrnTime() {
+		return grnTime;
+	}
+
+	@JsonIgnore
+	public void setGrnTime(Date grnTime) {
+		this.grnTime = grnTime;
+	}
+
+	@JsonIgnore
+	public Boolean getGrnBoolean() {
+		return grnBoolean;
+	}
+
+	@JsonIgnore
+	public void setGrnBoolean(Boolean grnBoolean) {
+		this.grnBoolean = grnBoolean;
+	}
+
+	@JsonIgnore
+	public String getGrnfile() {
+		return grnfile;
+	}
+
+	@JsonIgnore
+	public void setGrnfile(String grnfile) {
+		this.grnfile = grnfile;
+	}
+
+	@JsonIgnore
+	public String getGrnEmail() {
+		return grnEmail;
+	}
+
+	@JsonIgnore
+	public void setGrnEmail(String grnEmail) {
+		this.grnEmail = grnEmail;
+	}
+
+	@JsonIgnore
+	public TaxRates_6 getTaxRates_6() {
+		return TaxRates_6;
+	}
+
+	@JsonIgnore
+	public void setTaxRates_6(TaxRates_6 TaxRates_6) {
+		this.TaxRates_6 = TaxRates_6;
+	}
+
+	@JsonIgnore
+	public Set<Country_7> getCountry_7() {
+		return Country_7;
+	}
+
+	@JsonIgnore
+	public void setCountry_7(Set<Country_7> Country_7) {
+		this.Country_7 = Country_7;
+	}
+
+	@JsonIgnore
+	public Vendor_8 getVendor_8() {
+		return Vendor_8;
+	}
+
+	@JsonIgnore
+	public void setVendor_8(Vendor_8 Vendor_8) {
+		this.Vendor_8 = Vendor_8;
+	}
+
+	@JsonIgnore
+	public Set<Vehicle_9> getVehicle_9() {
+		return Vehicle_9;
+	}
+
+	@JsonIgnore
+	public void setVehicle_9(Set<Vehicle_9> Vehicle_9) {
+		this.Vehicle_9 = Vehicle_9;
+	}
+
+	@JsonIgnore
+	public Grn_5 getSelfGrn_5() {
+		return selfGrn_5;
+	}
+
+	@JsonIgnore
+	public void setSelfGrn_5(Grn_5 selfGrn_5) {
+		this.selfGrn_5 = selfGrn_5;
+	}
+
+	@JsonIgnore
+	public StatusCycle_13 getStatusCycle_13() {
+		return StatusCycle_13;
+	}
+
+	@JsonIgnore
+	public void setStatusCycle_13(StatusCycle_13 StatusCycle_13) {
+		this.StatusCycle_13 = StatusCycle_13;
+	}
+
+	@JsonIgnore
+	public Set<Item_10> getItem_10() {
+		return Item_10;
+	}
+
+	@JsonIgnore
+	public void setItem_10(Set<Item_10> Item_10) {
+		this.Item_10 = Item_10;
+	}
+
+	@JsonIgnore
+	public Taxcomponent_11 getTaxcomponent_11() {
+		return Taxcomponent_11;
+	}
+
+	@JsonIgnore
+	public void setTaxcomponent_11(Taxcomponent_11 Taxcomponent_11) {
+		this.Taxcomponent_11 = Taxcomponent_11;
+	}
+
+	public Grn_5() {
+		super.setEntityType("Grn_5");
+	}
+
+	@JsonIgnore
+	public static Grn_5 loadDefaultValues(String offset) {
+		Grn_5 entity = new Grn_5();
+		entity.setNextRoles("");
+		entity.setGrnNumber((double) 0);
+		entity.setGrnText("");
+		entity.setGrnLongText("");
+		entity.setGrnBoolean(false);
+		entity.setGrnEmail("");
+		return entity;
+	}
+
+	@Override
+	public int hashCode() {
+		int hashCode = 0;
+		if (this.getId() != null)
+			hashCode = hashCode + 37 + this.getId().hashCode();
+		else
+			hashCode = hashCode + 37;
+		return hashCode;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		Grn_5 entity = (Grn_5) object;
+		if (entity == null)
+			return false;
+		if ((entity.getId() == null && this.getId() == null)) {
+			return true;
+		}
+		if ((entity.getId() != null && this.getId() != null && entity.getId().equals(this.getId()))) {
+			return true;
+		} else
+			return false;
+	}
+
+	@Override
+	public String toString() {
+		String logResult = "Grn_5[id = " + id + ", status = " + status + ", nextRoles = " + nextRoles + ", grnNumber = "
+				+ grnNumber + ", grnDate = " + grnDate + ", taxRatesId = " + taxRatesId + ", vendorId = " + vendorId
+				+ ", selfGrnId = " + selfGrnId + ", grnText = " + grnText + ", grnDateTime = " + grnDateTime
+				+ ", grnLongText = " + grnLongText + ", grnTime = " + grnTime + ", grnBoolean = " + grnBoolean
+				+ ", grnfile = " + grnfile + ", grnEmail = " + grnEmail + ", ]";
+		if (Item_10 != null) {
+			for (Item_10 value : Item_10) {
+				if (value != null) {
+					logResult = logResult + value.toString();
+				}
+			}
+		}
+		if (Taxcomponent_11 != null) {
+			logResult = logResult + Taxcomponent_11.toString();
+		}
+		return logResult;
+	}
+}
+
+
+
+===================================================================================================================================================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,3162 @@
+
+
+idc sales loaded out issue is there 
+
+srinivas forms purchase order issue 
+
+hrms-vgs edit issue  purchase order issue 
+
+srininvas teams form guest users not able to acess the bot application
+
+----------------------------------------------------------------------
+
+
+onclick event will be created for embedded line items for in the view step or not   yes getpresetation called and process will be called with onclick event to load the data 
+
+based on what conditions default attribuets will be shown in view page              display attibutes 
+
+======================================================================
+
+
+=========================================================================================================================================================================
+Notes 
+
+
+when we adding items it will keep on sending one item in the request and get that item in the response 
+
+but 
+if we remove any obejct from embedded lines then all embedded data comes in the response in oncel event
+
+
+=========================================================================================================================================================================
+
+***Create Page File Request and Response*** 
+
+https://localhost:9099/kagami-generated_loadtest/dms/newUploadDocument
+
+entityId: Grn_5
+attrName: grnfile
+fileDetail: (binary)
+
+
+
+{data: "1672573653863"}
+
+
+**if want view document on view page*** 
+
+https://localhost:9099/kagami-generated_loadtest/dms/viewDocument?docId=1040275704996483072
+
+request => docId: 1040275704996483072
+
+Response => <!doctype html><html><body style='height: 100%; width: 100%; overflow: hidden; margin:0px; background-color: rgb(82, 86, 89);'><embed name='26CBB9C0715C13F04EE56EC5BDA3483A' style='position:absolute; left: 0; top: 0;'width='100%' height='100%' src='about:blank' type='application/pdf' internalid='26CBB9C0715C13F04EE56EC5BDA3483A'></body></html>
+
+
+***if we click on download it will rediect browser page and download the file to local system*** 
+
+=======================================================================================================================================
+
+** First Onchange event(status field) with all attributes data which does not have any events fields
+
+
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "b80c74e0-e0e5-9a93-f081-905cf2e06db1",
+  "guid": "a3d45979-3cdb-c4ac-a2ca-cceb8c1698af",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_382_status_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_ztVkewgJcEnl",
+          "grnNumber": 400,
+          "grnDate": "2022-12-29T00:00:00.000+05:30",
+          "grnTime": "2022-12-29T12:22:00.000+05:30",
+          "grnBoolean": true,                                          ================  boolean value format 
+          "grnDateTime": "2022-12-29T12:22:00.000+05:30",
+          "grnText": "grntext",
+          "nextRoles": "2323",
+          "grnLongText": "grnlongtext",
+          "grnEmail": "bottle@gmail.com",
+          "status": "localonpremise_env_1",
+          "StatusCycle_13": {
+            "masterEntityId": "1019470894253424640",
+            "entityType": "StatusCycle_13",
+            "createDateTime": "2022-09-14T10:23:22.000+05:30",
+            "updateDateTime": "2022-09-14T10:23:22.000+05:30",
+            "id": "localonpremise_env_1",
+            "statusname": "submit",
+            "statuscode": "submit"
+          }
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_ztVkewgJcEnl",
+        "status": "localonpremise_env_1"
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "b80c74e0-e0e5-9a93-f081-905cf2e06db1",
+      "guid": "a3d45979-3cdb-c4ac-a2ca-cceb8c1698af"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "e8412d8b-2f55-c57c-366f-4aaa664809aa"
+}
+
+
+
+
+=======================================================================================================================================
+
+Above request event response here StatusCycle_13 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "b80c74e0-e0e5-9a93-f081-905cf2e06db1",
+    "guid": "a3d45979-3cdb-c4ac-a2ca-cceb8c1698af",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_ztVkewgJcEnl",
+          "StatusCycle_13": {
+            "masterEntityId": "1019470894253424640",
+            "entityType": "StatusCycle_13",
+            "createdBy": "admin",
+            "createDateTime": "2022-09-14T10:23:22.000+05:30",
+            "updateDateTime": "2022-09-14T10:23:22.000+05:30",
+            "id": "localonpremise_env_1",
+            "statusname": "submit",
+            "statuscode": "submit"
+          }
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 54,
+    "1_process_creategrntreeform_62_CREATE_151_status_fetch": 19,
+    "2_f_StatusCycle_13": 17,
+    "3_process_creategrntreeform_62_CREATE_151_status_compute": 2,
+    "4_construct_response": 0,
+    "5_thumbnail": 0
+  }
+}
+
+
+==========================================================================================================================================
+
+if we remove 1-1 relation data (single drop down) value then we are sending the removed as prefix for id and object
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_387_status_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "status": "removed_",                                            we are sending the removed as prefix for id and obeject
+          "StatusCycle_13": "removed_"                                     we are sending the removed as prefix for id and obeject
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",                                         we are sending the removed as prefix for id and obeject
+        "status": "removed_",
+        "StatusCycle_13": "removed_"                                       we are sending the removed as prefix for id and obeject
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "f9666ee9-2d60-e288-9252-f15b14485d7f"
+}
+
+==========================================================================================================================================
+
+
+Response of if we remove 1-1 relation data (single drop down) value then we are sending the removed as prefix for id and obeject
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "StatusCycle_13": "removed_               removed_ coming as response  for that object in case of 1-m complete object wont come 
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 75,
+    "1_process_creategrntreeform_62_CREATE_154_status_fetch": 28,
+    "2_f_StatusCycle_13": 17,
+    "3_process_creategrntreeform_62_CREATE_154_status_compute": 2,
+    "4_construct_response": 0,
+    "5_thumbnail": 0
+  }
+}
+
+==========================================================================================================================================
+
+Next Request TaxRates (Grn-TaxRates)(T-T)   1-1 relation 
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_387_taxRatesId_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "taxRatesId": "localonpremise_env_1",
+          "TaxRates_6": {
+            "transactionEntityId": "1016297280656007168",
+            "entityType": "TaxRates_6",
+            "createDateTime": "2022-09-05T16:12:34.000+05:30",
+            "updateDateTime": "2022-09-05T16:12:34.000+05:30",
+            "activitylog": "1016297281205460992",
+            "_errorCode": 0,
+            "id": "localonpremise_env_1",
+            "nextRoles": "",
+            "taxName": "GST",
+            "taxCode": ""
+          }
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "taxRatesId": "localonpremise_env_1",
+        "TaxRates_6": {
+          "transactionEntityId": "1016297280656007168",
+          "entityType": "TaxRates_6",
+          "createDateTime": "2022-09-05T16:12:34.000+05:30",
+          "updateDateTime": "2022-09-05T16:12:34.000+05:30",
+          "activitylog": "1016297281205460992",
+          "_errorCode": 0,
+          "id": "localonpremise_env_1",
+          "nextRoles": "",
+          "taxName": "GST",
+          "taxCode": ""
+        }
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "2b8391cd-8705-37d0-a777-23f4a64aef8f"
+}
+
+========================================================================================================================================
+TaxRates (Grn-TaxRates)(T-T)1-1 relation Request Response 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "TaxRates_6": {
+            "transactionEntityId": "1016297280656007168",
+            "entityType": "TaxRates_6",
+            "createdBy": "admin",
+            "createDateTime": "2022-09-05T16:12:34.000+05:30",
+            "updateDateTime": "2022-09-05T16:12:34.000+05:30",
+            "activitylog": "1016297281205460992",
+            "_errorCode": 0.0,
+            "id": "localonpremise_env_1",
+            "status": "",
+            "nextRoles": "",
+            "taxName": "GST",
+            "taxCode": ""
+          }
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 134,
+    "1_process_creategrntreeform_62_CREATE_154_taxRatesId_fetch": 57,
+    "2_f_TaxRates_6": 52,
+    "3_process_creategrntreeform_62_CREATE_154_taxRatesId_compute": 4,
+    "4_construct_response": 0,
+    "5_thumbnail": 0
+  }
+}
+
+========================================================================================================================================
+
+Next Request Country (Grn-Country)(T-T)1-M relation
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_387_Country_7_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm", 
+          "Country_7": [                   ============================================>     for one to many relation we are sending the country data in array 
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0,
+              "id": "localonpremise_env_2",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus"
+            }
+          ]
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Country_7": [                                 ============================================>     for one to many relation we are sending the country 
+                                                                                                          data in array
+          {
+            "transactionEntityId": "1020325173495283712",
+            "entityType": "Country_7",
+            "createDateTime": "2022-09-16T18:57:58.000+05:30",
+            "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+            "activitylog": "1020325173939879936",
+            "_errorCode": 0,
+            "id": "localonpremise_env_2",
+            "nextRoles": "",
+            "countryname": "aus",
+            "countrycode": "aus"
+          }
+        ]
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "37de07da-7555-7a96-5c2b-0208a02fd30a"
+}
+
+=====================================================================================================================================
+
+Next Request Country (Grn-Country)(T-T)1-M relation Response
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Country_7": [
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createdBy": "admin",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0.0,
+              "id": "localonpremise_env_2",
+              "status": "",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus"
+            }
+          ]
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 111,
+    "1_process_creategrntreeform_62_CREATE_154_Country_7_fetch": 54,
+    "2_f_Country_7": 48,
+    "3_process_creategrntreeform_62_CREATE_154_Country_7_compute": 3,
+    "4_construct_response": 0,
+    "5_thumbnail": 0
+  }
+}
+=====================================================================================================================================
+Second Request of Country (Grn-Country)(T-T)1-M relation
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_387_Country_7_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Country_7": [                                    ==========> two objects we are sending in both detailedObjects and changeFor
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0,
+              "id": "localonpremise_env_2",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus",
+              "createdBy": "admin",
+              "status": ""
+            },
+            {
+              "transactionEntityId": "1016365602248482816",
+              "entityType": "Country_7",
+              "createDateTime": "2022-09-05T20:44:03.000+05:30",
+              "updateDateTime": "2022-09-05T20:44:03.000+05:30",
+              "activitylog": "1016365602672107520",
+              "_errorCode": 0,
+              "id": "localonpremise_env_1",
+              "nextRoles": "",
+              "countryname": "America",
+              "countrycode": "Usa"
+            }
+          ]
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Country_7": [
+          {
+            "transactionEntityId": "1020325173495283712",
+            "entityType": "Country_7",
+            "createDateTime": "2022-09-16T18:57:58.000+05:30",
+            "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+            "activitylog": "1020325173939879936",
+            "_errorCode": 0,
+            "id": "localonpremise_env_2",
+            "nextRoles": "",
+            "countryname": "aus",
+            "countrycode": "aus",
+            "createdBy": "admin",
+            "status": ""
+          },
+          {
+            "transactionEntityId": "1016365602248482816",
+            "entityType": "Country_7",
+            "createDateTime": "2022-09-05T20:44:03.000+05:30",
+            "updateDateTime": "2022-09-05T20:44:03.000+05:30",
+            "activitylog": "1016365602672107520",
+            "_errorCode": 0,
+            "id": "localonpremise_env_1",
+            "nextRoles": "",
+            "countryname": "America",
+            "countrycode": "Usa"
+          }
+        ]
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "dcf56a4b-dc25-8bda-f33d-8c50818fd6a8"
+}
+
+
+=====================================================================================================================================
+
+Second Request of Country (Grn-Country)(T-T)1-M relation Response  
+
+Note for 3 also same 3 are sending and 3 are receiving
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Country_7": [                               ==================================> we are receiving the two objects again in the response 
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createdBy": "admin",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0.0,
+              "id": "localonpremise_env_2",
+              "status": "",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus"
+            },
+            {
+              "transactionEntityId": "1016365602248482816",
+              "entityType": "Country_7",
+              "createdBy": "admin",
+              "createDateTime": "2022-09-05T20:44:03.000+05:30",
+              "updateDateTime": "2022-09-05T20:44:03.000+05:30",
+              "activitylog": "1016365602672107520",
+              "_errorCode": 0.0,
+              "id": "localonpremise_env_1",
+              "status": "",
+              "nextRoles": "",
+              "countryname": "America",
+              "countrycode": "Usa"
+            }
+          ]
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 99,
+    "1_process_creategrntreeform_62_CREATE_154_Country_7_fetch": 53,
+    "2_f_Country_7": 48,
+    "3_process_creategrntreeform_62_CREATE_154_Country_7_compute": 5,
+    "4_construct_response": 0,
+    "5_thumbnail": 0
+  }
+}
+
+============================================================================================================================================================
+
+Removing the  Country (Grn-Country)(T-T)1-M relation (multi drop down )
+
+if we remove any object from multi relation then we are sendig with prefix as removed for that records and remaing records are alos we are sending 
+
+in the respose removed record wont come remaing records will come 
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_387_Country_7_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Country_7": [
+            {
+              "transactionEntityId": "1016365505859182592",
+              "entityType": "Country_7",
+              "createDateTime": "2022-09-05T20:43:40.000+05:30",
+              "updateDateTime": "2022-09-05T20:43:40.000+05:30",
+              "activitylog": "1016365507843088384",
+              "_errorCode": 0,
+              "id": "localonpremise_env_0",
+              "nextRoles": "",
+              "countryname": "india",
+              "countrycode": "IND",
+              "createdBy": "admin",
+              "status": ""
+            },
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0,
+              "id": "localonpremise_env_2",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus",
+              "createdBy": "admin",
+              "status": ""
+            },
+            {
+              "id": "removed_localonpremise_env_1"
+            }
+          ]
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Country_7": [
+          {
+            "transactionEntityId": "1016365505859182592",
+            "entityType": "Country_7",
+            "createDateTime": "2022-09-05T20:43:40.000+05:30",
+            "updateDateTime": "2022-09-05T20:43:40.000+05:30",
+            "activitylog": "1016365507843088384",
+            "_errorCode": 0,
+            "id": "localonpremise_env_0",
+            "nextRoles": "",
+            "countryname": "india",
+            "countrycode": "IND",
+            "createdBy": "admin",
+            "status": ""
+          },
+          {
+            "transactionEntityId": "1020325173495283712",
+            "entityType": "Country_7",
+            "createDateTime": "2022-09-16T18:57:58.000+05:30",
+            "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+            "activitylog": "1020325173939879936",
+            "_errorCode": 0,
+            "id": "localonpremise_env_2",
+            "nextRoles": "",
+            "countryname": "aus",
+            "countrycode": "aus",
+            "createdBy": "admin",
+            "status": ""
+          },
+          {
+            "id": "removed_localonpremise_env_1"
+          }
+        ]
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "8fb03383-246c-d0c2-a711-6f182adacd2e"
+}
+
+=========================================== Strong relation data =================================================================================================================
+
+when we click on add for first item line it will send item temp id in the array 
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONLOAD",
+    "uiEventType": null,
+    "uiEventValue": "prule_384_onLoad"
+  },
+  "inputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "grnNumber": 400,                ====================> Here parent value going means only fileds does not have any change evenst 
+                                                                (onchnge events of parent attribuest not clicked) thats it going on item
+          "Item_10": [
+            {
+              "id": "temp_prb9of2ql7"
+            }
+          ]
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Item_10": [
+          {
+            "id": "temp_prb9of2ql7"              =========================================>  it will send item temp id in the array
+          }
+        ]
+      }
+    },
+    "processName": "process_creategrntreeform_62_create_2",
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": 1,
+          "pageSize": 10
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  }
+}
+
+==========================================================================================================================
+
+when we click on add for first item line it will send item temp id in the array and response it will load all the lovs data intially for item data will be 
+set as removed_
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+        "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Item_10": [
+            {
+              "id": "temp_prb9of2ql7",
+              "ItemMaster_12": "removed_",
+              "State_23": "removed_"
+            }
+          ]
+        }
+      ],
+      "State_23": [
+        {
+          "masterEntityId": "1030077574011211776",
+          "entityType": "State_23",
+          "createDateTime": "2022-10-13T16:50:32.000+05:30",
+          "updateDateTime": "2022-10-13T16:50:32.000+05:30",
+          "id": "local_0",
+          "statename": "ap",
+          "statecode": "ap"
+        }
+      ],
+     
+      "ItemMaster_12": [
+        {
+          "masterEntityId": "12122",
+          "entityType": "ItemMaster_12",
+          "id": "01",
+          "itemname": "mm"
+        }
+      ],
+      "City_22": [
+        
+      ],
+      "Area_24": [
+        
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "1",
+          "startRecord": "1",
+          "endRecord": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 169,
+    "1_process_creategrntreeform_62_CREATE_154_onLoad_compute": 3,
+    "2_process_creategrntreeform_62_CREATE_154_onLoad_fetch": 93,
+    "3_f_ItemMaster_12": 48,
+    "4_f_State_23": 36,
+    "5_construct_response": 26,
+    "6_thumbnail": 0
+  }
+}
+==========================================================================================================================================
+On chnge of Item Master In Item Embedded Line 
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_384_itemMasterId_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "Item_10": [
+            {
+              "id": "temp_prb9of2ql7",
+              "quantity": 1,
+              "rate": 1,
+              "itemMasterId": "01",
+              "ItemMaster_12": {
+                "masterEntityId": "12122",
+                "entityType": "ItemMaster_12",
+                "id": "01",
+                "itemname": "mm"
+              }
+            }
+          ],
+          "id": "temp_NWGGcTBsFMgm"
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Item_10": [
+          {
+            "id": "temp_prb9of2ql7",
+            "itemMasterId": "01",
+            "ItemMaster_12": {
+              "masterEntityId": "12122",
+              "entityType": "ItemMaster_12",
+              "id": "01",
+              "itemname": "mm"
+            }
+          }
+        ]
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "e4e63548-cd66-a5de-71f0-a6cb3c49f5ee"
+}
+
+===========================================================================================================================================
+On chnge of Item Master In Item Embedded Line response 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Item_10": [
+            {
+              "id": "temp_prb9of2ql7"           we are receiving the item only id boz no assigmemnt or no calculations for this chnage event 
+            }
+          
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "1",
+          "startRecord": "1",
+          "endRecord": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 127,
+    "1_process_creategrntreeform_62_CREATE_154_itemMasterId_fetch": 44,
+    "2_f_ItemMaster_12": 1672569913265,
+    "3_process_creategrntreeform_62_CREATE_154_itemMasterId_compute": 5,
+    "4_construct_response": 32,
+    "5_thumbnail": 0
+  }
+}
+============================================================================================================================================
+
+On chnage of state selection in item line Request 
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCHANGE",
+    "uiEventValue": "prule_384_stateId_onChange",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Item_10": [
+            {
+              "id": "temp_prb9of2ql7",
+              "stateId": "local_0",
+              "State_23": {
+                "masterEntityId": "1030077574011211776",
+                "entityType": "State_23",
+                "createDateTime": "2022-10-13T16:50:32.000+05:30",
+                "updateDateTime": "2022-10-13T16:50:32.000+05:30",
+                "id": "local_0",
+                "statename": "ap",
+                "statecode": "ap"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Item_10": [
+          {
+            "id": "temp_prb9of2ql7",
+            "stateId": "local_0",
+            "State_23": {
+              "masterEntityId": "1030077574011211776",
+              "entityType": "State_23",
+              "createDateTime": "2022-10-13T16:50:32.000+05:30",
+              "updateDateTime": "2022-10-13T16:50:32.000+05:30",
+              "id": "local_0",
+              "statename": "ap",
+              "statecode": "ap"
+            }
+          }
+        ]
+      }
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  },
+  "checksum": "448c6b6e-367d-614b-bbe8-8de3f803edf4"
+}
+
+===============================================================================================================================================
+
+
+On chnage of state selection in item line Request Response it load the city data based on state selection 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Item_10": [
+            {
+              "id": "temp_prb9of2ql7",
+              "Area_24": "removed_",
+              "City_22": "removed_",
+              "cityId": "removed_",
+              "areaId": "removed_",
+              "State_23": {
+                "masterEntityId": "1030077574011211776",
+                "entityType": "State_23",
+                "createdBy": "admin",
+                "createDateTime": "2022-10-13T16:50:32.000+05:30",
+                "updateDateTime": "2022-10-13T16:50:32.000+05:30",
+                "id": "local_0",
+                "statename": "ap",
+                "statecode": "ap"
+              }
+            }
+          ]
+        }
+      ],
+      "City_22": [
+        {
+          "masterEntityId": "12121212",
+          "entityType": "City_22",
+          "createDateTime": "2022-10-13T16:50:32.000+05:30",
+          "updateDateTime": "2022-10-13T16:50:32.000+05:30",
+          "id": "1",
+          "cname": "hyde",
+          "ccode": "hyde",
+          "stateId": "local_0"
+        }
+      ],
+      "Area_24": [
+        
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "1",
+          "startRecord": "1",
+          "endRecord": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 219,
+    "1_process_creategrntreeform_62_CREATE_154_stateId_fetch": 151,
+    "2_f_State_23": 34,
+    "3_f_City_22": 42,
+    "4_f_Area_24": 67,
+    "5_process_creategrntreeform_62_CREATE_154_stateId_compute": 4,
+    "6_construct_response": 14,
+    "7_thumbnail": 0
+  }
+}
+=========================================================================================================================================================================================================
+When we click on second item line => it will send item new temp id it wont send any details of first line item
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONLOAD",
+    "uiEventType": null,
+    "uiEventValue": "prule_384_onLoad"
+  },
+  "inputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Item_10": [
+            {
+              "id": "temp_i8kb1xsge"
+            }
+          ]
+        }
+      ]
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_NWGGcTBsFMgm",
+        "Item_10": [
+          {
+            "id": "temp_i8kb1xsge"
+          }
+        ]
+      }
+    },
+    "processName": "process_creategrntreeform_62_create_2",
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  }
+}
+
+=========================================================================================================================================================================================================
+
+When we click on second item line => it will send item new temp id it wont send any details of first line item in the response also 
+only required master data will be loaded 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "State_23": [
+        {
+          "masterEntityId": "1030077574011211776",
+          "entityType": "State_23",
+          "createDateTime": "2022-10-13T16:50:32.000+05:30",
+          "updateDateTime": "2022-10-13T16:50:32.000+05:30",
+          "id": "local_0",
+          "statename": "ap",
+          "statecode": "ap"
+        }
+      ],
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm",
+          "Item_10": [
+            {
+              "id": "temp_i8kb1xsge",
+              "ItemMaster_12": "removed_",
+              "State_23": "removed_"
+            }
+          ]
+        }
+      ],
+      "ItemMaster_12": [
+        {
+          "masterEntityId": "12122",
+          "entityType": "ItemMaster_12",
+          "id": "01",
+          "itemname": "mm"
+        }
+      ],
+      "City_22": [
+        
+      ],
+      "Area_24": [
+        
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "2",
+          "startRecord": "1",
+          "endRecord": "2",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 119,
+    "1_process_creategrntreeform_62_CREATE_154_onLoad_compute": 4,
+    "2_process_creategrntreeform_62_CREATE_154_onLoad_fetch": 44,
+    "3_f_ItemMaster_12": 17,
+    "4_f_State_23": 14,
+    "5_construct_response": 16,
+    "6_thumbnail": 0
+  }
+}
+=========================================================================================================================================================================================================
+
+
+======================================================================
+
+CREATE OR EDIT STEP 
+
+
+ONE TO ONE AND ONE TO MANY RELATION EMBEDDED DATA SHOULD GO IN SINGLE OBJECT AND LIST OF OBJECTS 
+
+
+EmployeeProvidentFund_895 		ONE TO ONE					 WITH EmployerPFContribution_897
+EmployerPFContribution_897 	    ONE TO MANY 				 WITH EmployerPFBreakup_899
+
+
+{
+  "event": {
+    "processName": "process_EPFConfiguration_1574250_edit_40"
+  },
+  "fromUi": true,
+  "windowId": "92e289aa-7a99-5883-8d91-29a9e9d08d78",
+  "guid": "7bb28b47-ce08-5e13-93cb-50fb30f3cf8d",
+  "uiEvent": {
+    "uiEventName": "ONLOAD",
+    "uiEventType": null,
+    "uiEventValue": "prule_51825_onLoad"
+  },
+  "inputData": {
+    "detailedObjects": {
+      "EmployeeProvidentFund_895": [
+        {
+          "id": "intraruntime_env_0",
+          "EmployerPFContribution_897":[           ===============> WRONG HERE 
+            {
+              "EmployerPFBreakup_899": [
+                {
+                  "id": "temp_i6j4eq4lbyt"
+                }
+              ]
+            }
+			]
+        }
+      ]
+    },
+    "changeFor": {
+      "EmployeeProvidentFund_895": {
+        "id": "intraruntime_env_0",
+        "EmployerPFContribution_897": [            ==============> WRONG HERE 
+          {
+            "EmployerPFBreakup_899": [
+              {
+                "id": "temp_i6j4eq4lbyt"
+              }
+            ]
+          }
+		  ]
+      }
+    },
+    "processName": "process_EPFConfiguration_1574250_edit_40",
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "92e289aa-7a99-5883-8d91-29a9e9d08d78",
+      "guid": "7bb28b47-ce08-5e13-93cb-50fb30f3cf8d"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "EmployeePFContribution_896": {
+          "pageNumber": "1",
+          "totalRecords": "1",
+          "startRecord": "1",
+          "endRecord": "1",
+          "pageSize": "10"
+        },
+        "EmployerPFContribution_897": {
+          "pageNumber": "1",
+          "totalRecords": "1",
+          "startRecord": "1",
+          "endRecord": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "EmployeeProvidentFund_895",
+        "participatingEntities": [
+          "EmployeePFContribution_896",
+          "EmployerPFContribution_897"
+        ]
+      }
+    }
+  }
+}
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+If we remove any embedded line by using cross icon button then we are sending the Item id with prefix as removed 
+
+
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "b80c74e0-e0e5-9a93-f081-905cf2e06db1",
+  "guid": "690ac73f-9841-97d3-a96f-ca278b23e40f",
+  "uiEvent": {
+    "uiEventName": "PAGECHANGE",
+    "uiEventType": null
+  },
+  "inputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "Item_10": [
+            {
+              "id": "removed_temp_k0lldx4ny0s"                       =====> removed as prefix here so based on this line data will be deleted from context and not sending other details of line 
+            }
+          ],
+          "id": "temp_JROYWnYkapgW"
+        }
+      ]
+    },
+    "processName": "process_creategrntreeform_62_create_2",
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "b80c74e0-e0e5-9a93-f081-905cf2e06db1",
+      "guid": "690ac73f-9841-97d3-a96f-ca278b23e40f"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": 1,
+          "pageSize": 10
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "changeFor": {
+      
+    }
+  }
+}
+
+=========================================================================================================================
+
+On the final Grn Submit request 
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONSUBMIT",
+    "uiEventType": null,
+    "uiEventValue": "onSubmit"
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_NWGGcTBsFMgm"
+        }
+      ]
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": 1,
+          "pageSize": 10
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        },
+        "Grn_5": {
+          "pageNumber": "1",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  }
+}
+========================================================================================================================================================
+
+On the final Grn Submit request Reponse it will load the next verb presentation rules also 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "uiResource": {                 ===================> all presentations will be loaded here 
+    },
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "local_24"
+        }
+      ]
+    },
+    "executedStepName": "process_creategrntreeform_62_VIEW_149_create",
+    "processName": "process_creategrntreeform_62_create_2",
+    "responseMap": {
+      
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 833,
+    "1_construct_response": 0,
+    "2_thumbnail": 5
+  }
+}
+===========================================================================================================================================================
+Next Onload Call Of View will be called automatically 
+
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONLOAD",
+    "uiEventType": null,
+    "uiEventValue": "prule_377_onLoad"
+  },
+  "inputData": {
+    "detailedObjects": {
+      
+    },
+    "changeFor": {
+      
+    },
+    "processName": "process_creategrntreeform_62_create_2",
+    "verbProperties": {
+      "pageNumber": 1,
+      "template": "list",
+      "byMeForMe": "DEFAULT",
+      "pageSize": 25
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    }
+  }
+}
+=============================================================================================================================================================
+
+Next Onload Call Of View will be called automatically  (response details) 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "transactionEntityId": "1059066018703921152",
+          "entityType": "Grn_5",
+          "createdBy": "admin",
+          "createDateTime": "2023-01-01T16:40:16.000+05:30",
+          "updateDateTime": "2023-01-01T16:40:16.000+05:30",
+          "activitylog": "1059066020150956032",
+          "_errorCode": 0.0,
+          "id": "local_24",
+          "nextRoles": "next roles",
+          "grnNumber": 3434.0,
+          "grnDate": "2023-01-02T00:00:00.000+05:30",                                 all attributes of parent will be loaded 
+          "taxRatesId": "localonpremise_env_1",
+          "grnText": "Helllo",
+          "grnDateTime": "2023-01-10T14:48:00.000+05:30",
+          "grnLongText": "Hellow world",
+          "grnTime": "2023-01-01T14:48:00.000+05:30",
+          "grnBoolean": true,
+          "grnEmail": "test@gmail.com",
+          "TaxRates_6": {
+            "transactionEntityId": "1016297280656007168",
+            "entityType": "TaxRates_6",
+            "createdBy": "admin",
+            "createDateTime": "2022-09-05T16:12:34.000+05:30",
+            "updateDateTime": "2022-09-05T16:12:34.000+05:30",
+            "activitylog": "1016297281205460992",
+            "_errorCode": 0.0,
+            "id": "localonpremise_env_1",
+            "status": "",
+            "nextRoles": "",
+            "taxName": "GST",
+            "taxCode": ""
+          },
+          "Country_7": [
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createdBy": "admin",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",                  all attributes of weak relation one to many will loaded
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0.0,
+              "id": "localonpremise_env_2",
+              "status": "",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus"
+            }
+          ],
+          "Vehicle_9": [
+            
+          ],
+          "Item_10": [
+            {
+              "id": "local_34420428218276",
+              "quantity": 1.0,                                                   attributes of strong relation one to many will loaded line 1 and line 2 also 
+              "Whdetails_25": [
+                
+              ]
+            },
+            {
+              "id": "local_34420426549222",
+              "quantity": 1.0,
+              "Whdetails_25": [
+                
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "verbProperties": {
+      "totalRecords": 25,
+      "startRecord": 1,
+      "endRecord": 25,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 152,
+    "1_process_creategrntreeform_62_VIEW_149_onLoad_compute": 3,
+    "2_process_creategrntreeform_62_VIEW_149_onLoad_fetch": 106,
+    "3_f_Grn_5": 72,
+    "4_construct_response": 0,
+    "5_thumbnail": 0
+  }
+}
+
+
+=========================================================================================================================================================================================================
+
+if we click 1-M relation T-T (weak realtion )data then on the view form request 
+
+https://localhost:9099/kagami-generated_loadtest/api/presentation/getPresentationRule?presentationRuleId=prule_134 next onlick evet will be called automatically 
+
+presentationRuleId=prule_134
+
+
+{
+  "uiTemplate": "list",
+  "presentationId": "prule_134",
+  "presentationName": "p_Country_7_list_0",
+  "entityId": "Country_7",
+  "entityName": "Country",
+  "entityPrefix": "",
+  "version": "0",
+  "headerName": "List Country",
+  "formName": "Country",
+  "participatingEntities": [
+    
+  ],
+  "groupId": "prule_group_111",
+  "inheritDefaults": false,
+  "policyMap": {
+    
+  },
+  "presentationRules": {
+    "id": {
+      "@type": "FieldPresentation",
+      "readOnly": true,
+      "onClickRequired": false,
+      "attrName": "id",
+      "htmlControl": "text",
+      "label": "id",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "validations": {
+        "notNull": true
+      },
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": true,
+      "mandatory": true,
+      "visible": false
+    },
+    "status": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "status",
+      "htmlControl": "text",
+      "label": "status",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "validations": {
+        
+      },
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": true
+    },
+    "nextRoles": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "nextRoles",
+      "htmlControl": "text",
+      "label": "nextRoles",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "validations": {
+        
+      },
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": true
+    },
+    "countryname": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "countryname",
+      "htmlControl": "text",
+      "label": "countryname",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "validations": {
+        
+      },
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": true
+    },
+    "countrycode": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "countrycode",
+      "htmlControl": "text",
+      "label": "countrycode",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "validations": {
+        
+      },
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": true
+    },
+    "statusRemark": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "statusRemark",
+      "htmlControl": "text",
+      "label": "statusRemark",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": false
+    },
+    "createdBy": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "createdBy",
+      "htmlControl": "text",
+      "label": "createdBy",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "text",
+        "textarea",
+        "password"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": false
+    },
+    "createDateTime": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "createDateTime",
+      "htmlControl": "dateTime",
+      "label": "createDateTime",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "dateTime",
+        "date",
+        "time"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": false
+    },
+    "updateDateTime": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "updateDateTime",
+      "htmlControl": "dateTime",
+      "label": "updateDateTime",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        "dateTime",
+        "date",
+        "time"
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": false
+    },
+    "activitylog": {
+      "@type": "FieldPresentation",
+      "readOnly": false,
+      "onClickRequired": false,
+      "attrName": "activitylog",
+      "htmlControl": "customactivitylog",
+      "label": "activityLog",
+      "footerElement": false,
+      "autoSelect": false,
+      "headerDisable": false,
+      "onChangeRequired": false,
+      "qrScanner": false,
+      "broadCastRequired": false,
+      "emitRequired": false,
+      "nullifyingAttributes": [
+        
+      ],
+      "eventMap": {
+        
+      },
+      "source": {
+        
+      },
+      "permittedDisplayType": [
+        
+      ],
+      "rerenderList": {
+        
+      },
+      "entityPrefix": "",
+      "searcheable": false,
+      "filter": false,
+      "autoGenerated": false,
+      "mandatory": false,
+      "visible": false
+    }
+  },
+  "parentEventMap": {
+    
+  },
+  "subscriptionEventMap": {
+    
+  },
+  "mandatory": false,
+  "visible": true,
+  "order": 0,
+  "onLoadRequired": false,
+  "onCancelRequired": false,
+  "formComputations": [
+    
+  ],
+  "formAttributeComputations": [
+    
+  ],
+  "participatingProcess": [
+    
+  ],
+  "groupByCheck": false,
+  "dynamicForm": false,
+  "list": false,
+  "embedded": false
+}
+
+=========================================================================================================================================================================================================
+
+Next Request is onclick event 
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+  "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+  "uiEvent": {
+    "uiEventName": "ONCLICK",
+    "uiEventValue": "prule_377_onClick_Country_7",
+    "uiEventType": null
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "local_24"
+        }
+      ]
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+      "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787"
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Country_7": {
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Country_7"
+        ]
+      }
+    }
+  }
+}
+
+=========================================================================================================================================================================================================
+
+Next Request is onclick event response 
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "8f5d6e19-b8b7-6e31-ae21-c249fc734e22",
+    "guid": "4fe99843-f0a9-e223-a8f3-54cc196dc787",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "entityType": "Grn_5",
+          "_errorCode": 0.0,
+          "id": "local_24",
+          "grnBoolean": false,
+          "Country_7": [
+            {
+              "transactionEntityId": "1016365505859182592",
+              "entityType": "Country_7",
+              "createdBy": "admin",
+              "createDateTime": "2022-09-05T20:43:40.000+05:30",
+              "updateDateTime": "2022-09-05T20:43:40.000+05:30",                  ===============> two countries obejects are loaded here 
+              "activitylog": "1016365507843088384",
+              "_errorCode": 0.0,
+              "id": "localonpremise_env_0",
+              "status": "",
+              "nextRoles": "",
+              "countryname": "india",
+              "countrycode": "IND"
+            },
+            {
+              "transactionEntityId": "1020325173495283712",
+              "entityType": "Country_7",
+              "createdBy": "admin",
+              "createDateTime": "2022-09-16T18:57:58.000+05:30",
+              "updateDateTime": "2022-09-16T18:57:58.000+05:30",
+              "activitylog": "1020325173939879936",
+              "_errorCode": 0.0,
+              "id": "localonpremise_env_2",
+              "status": "",
+              "nextRoles": "",
+              "countryname": "aus",
+              "countrycode": "aus"
+            }
+          ],
+          "Vehicle_9": [
+            
+          ],
+          "Item_10": [
+            
+          ]
+        }
+      ]
+    },
+    "processName": "SLprocess_creategrntreeform_62_149_Country_7_onClick_for_prule_377",
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Country_7": {
+          "pageNumber": "1",
+          "totalRecords": "2",
+          "startRecord": "1",
+          "endRecord": "2",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Country_7"
+        ]
+      }
+    },
+    "verbProperties": {
+      "totalRecords": 0,
+      "startRecord": 0,
+      "endRecord": 0,
+      "pageSize": "25"
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 133,
+    "1_process_creategrntreeform_62_VIEW_149_Country_7_fetch": 33,
+    "2_f_Grn_5": 24,
+    "3_process_creategrntreeform_62_VIEW_149_Country_7_compute": 1,
+    "4_construct_response": 15,
+    "5_thumbnail": 0
+  }
+}
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+=========================================================================================================================================================================================================
+
+
+NONPRIMITIVE
+
+=========================================================================================================================e
+Embedded Delete On Cancel Event 
+
+
+{
+  "event": {
+    "processName": "process_creategrntreeform_62_create_2"
+  },
+  "fromUi": true,
+  "windowId": "508781bb-4a5c-8b09-9619-90ed0abde498",
+  "guid": "a2f0899f-ac85-482e-95f7-32fed632b346",
+  "uiEvent": {
+    "uiEventName": "ONCANCEL",
+    "uiEventType": null,
+    "uiEventValue": "prule_384_onCancel"
+  },
+  "inputData": {
+    "processName": "process_creategrntreeform_62_create_2",
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_WiTOkMFIAWdG",
+          "Item_10": [
+            {
+              "id": "removed_temp_ssuzo9cqjb"                           ======> if we delete embedded item then id will be removed 
+            }
+          ]
+        }
+      ]
+    },
+    "verbProperties": {
+      
+    },
+    "properties": {
+      "fromUI": true,
+      "windowId": "508781bb-4a5c-8b09-9619-90ed0abde498",
+      "guid": "a2f0899f-ac85-482e-95f7-32fed632b346"
+    },
+    "changeFor": {
+      "Grn_5": {
+        "id": "temp_WiTOkMFIAWdG",
+        "Item_10": [
+          {
+            "id": "removed_temp_ssuzo9cqjb"
+          }
+        ]
+      }
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": 1,
+          "pageSize": 10
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    }
+  }
+}
+
+============================================================================================
+
+
+
+Above request Response 
+
+
+{
+  "properties": {
+    "fromUI": true,
+    "windowId": "508781bb-4a5c-8b09-9619-90ed0abde498",
+    "guid": "a2f0899f-ac85-482e-95f7-32fed632b346",
+    "WAIT": "false"
+  },
+  "constructOutputData": {
+    "detailedObjects": {
+      "Grn_5": [
+        {
+          "id": "temp_WiTOkMFIAWdG",
+          "grnNumber": 96.0,
+          "Item_10": [
+            {
+              "id": "temp_xqbjcuedbd8",            =========================> deleted item sould not come in the respose this is existing item 
+              "quantity": 2.0,
+              "rate": 2.0,
+              "itemMasterId": "01",
+              "ItemMaster_12": {
+                "masterEntityId": "12122",
+                "entityType": "ItemMaster_12",
+                "id": "01",
+                "itemname": "mm"
+              },
+              "Whdetails_25": [
+                
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "responseMap": {
+      
+    },
+    "embeddedInfo": {
+      "entityPageMap": {
+        "Item_10": {
+          "pageNumber": "1",
+          "totalRecords": "1",
+          "startRecord": "1",
+          "endRecord": "1",
+          "pageSize": "10"
+        },
+        "Taxcomponent_11": {
+          "pageNumber": "1",
+          "totalRecords": "0",
+          "pageSize": "10"
+        }
+      },
+      "entitySearchMap": {
+        
+      },
+      "entitySortMap": {
+        
+      },
+      "entityInput": {
+        "entityId": "Grn_5",
+        "participatingEntities": [
+          "Item_10",
+          "Taxcomponent_11"
+        ]
+      }
+    },
+    "thumbnails": {
+      
+    }
+  },
+  "executionLogger": {
+    "server_time": 9225,
+    "1_f_ctx_Kagorithm_6": 1,
+    "2_merge_Kagorithm_6": 1,
+    "3_in_Kagorithm_6": 355,
+    "4_exec_Kagorithm_6": 1631,
+    "5_out_Kagorithm_6": 74,
+    "6_construct_response": 1035,
+    "7_thumbnail": 0
+  }
+}
+
+==========================================================================================================================================================================
+
+
+Runtime Kago Call Code 
+
+
+
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'DB_CREATE2', "28. sec80G");
+SET sec80G = NULL ;
+
+SET sec80G = ' {"_header":{"entityid":"SectionEightyGG_603","entitytype":"EMBEDDED","audited":false,"mode":1,"updateui":0,"relationtype":"","prefix":"","mappedattribute":""},"_details":{"declared":0,"total":0,"maxLimit":0,"deductible":0,"narration":"","id":"#TEMP_ID"},"_updated":[],"_onetoone":{},"_onetomany":{},"_manytoone":{},"_manytomany":{}} ' ;
+
+SET sec80G = REPLACE(sec80G, "#TEMP_ID", CONCAT('temp_',getUIDShort()));
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'COMPUTE', "29. pop sec80G from itrSec80G");
+
+SET sec80G = JSON_SET(sec80G,'$._details.eightyGComponentsId',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80G,'$._details.id')),'null'));
+
+SET sec80G = JSON_SET(sec80G,'$._manytoone.EightyGComponents._details.deductionName',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80G,'$._details.deductionName')),'null'));
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', ' PRINT sec80G.EightyGComponents.deductionName',IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80G,'$._manytoone.EightyGComponents._details.deductionName')),'null'),''));
+
+SET sec80G = JSON_SET(sec80G,'$._manytoone.EightyGComponents._details.deductionType',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80G,'$._details.deductionType')),'null'));
+
+SET itrSec80G = updateHeaderPrefix(itrSec80G,'$','');
+
+SET sec80G = JSON_SET(sec80G,'$._manytoone.EightyGComponents',IFNULL(NULLIF(JSON_EXTRACT(itrSec80G,'$'),'null'),JSON_OBJECT()));
+
+SET sec80G = JSON_SET(sec80G,'$._details.total',0.0);
+
+SET sec80G = JSON_SET(sec80G,'$._details.maxLimit',CAST(IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80G,'$._details.maxDeclaration')),'null'),0) AS DECIMAL(25,3)));
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', ' PRINT sec80G.maxLimit', IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80G,'$._details.maxLimit')),'null'),''));
+
+SET sec80G = updateHeaderPrefix(sec80G,'$','');
+
+IF(JSON_TYPE(JSON_EXTRACT(contextDeclaration,'$._onetomany.SectionEightyGG')) != 'NULL' ) THEN 
+	SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyGG',arrayAppendAll(JSON_EXTRACT(contextDeclaration,'$._onetomany.SectionEightyGG'),IFNULL(NULLIF(JSON_EXTRACT(sec80G,'$'),'null'),JSON_OBJECT()))); 
+ELSE 
+	IF  JSON_TYPE(IFNULL(NULLIF(JSON_EXTRACT(sec80G,'$'),'null'),JSON_OBJECT())) != 'ARRAY' THEN 
+		SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyGG',JSON_ARRAY(IFNULL(NULLIF(JSON_EXTRACT(sec80G,'$'),'null'),JSON_OBJECT())));
+	ELSE 
+		SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyGG',IFNULL(NULLIF(JSON_EXTRACT(sec80G,'$'),'null'),JSON_OBJECT())); 
+	END IF;
+END IF;
+
+SET _itr11 = _itr11+1; 
+
+END WHILE LOOP__itr11; 
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'IF', "TRUE BLOCK END OF 17. sec80Gcomp");
+
+
+

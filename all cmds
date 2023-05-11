@@ -1,0 +1,1959 @@
+
+
+dcgl to run jar file 
+
+dcgltema to run jar file 
+
+
+
+java -jar -XX:+IgnoreUnrecognizedVMOptions -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -XX:+PrintStringDeduplicationStatistics -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/home/ubuntu/kagami/logs/dcgl//2021.06.21.09.57.08_gc.log  -Dspring.config.location=file:/home/ubuntu/kagami/download/dcgl/12002/config/ -Dlog=/home/ubuntu/kagami/logs/dcgl//2021.06.21.09.57.08 /home/ubuntu/restructure/dcgl/0/target/kagami-generated_dcgl.jar &
+
+
+
+Comile Policy
+
+https://demo.kagamierp.com:12004/kagami-generated_ShilpaCare/util/compileAllPolicy
+
+
+
+http://dev.kagamierp.com:12043/kagami-generated_PnR/util/compileAllPolicy
+
+
+
+
+dont make any changes in MohanBoards project 
+
+
+
+Kagos check 
+
+cd /home/ubuntu/restructure/MohanBoardsNewNew/157/base/kagorithm-template/src/main/java/com/bcv/kagami/kagorithm
+
+
+
+scp -r husen@prod.platform.kagamierp.com:docTemplate C:/cygwin64/home/husenaiah.g
+
+
+
+model class 
+
+cd home/ubuntu/restructure/MohanBoardsNewNew/157/base/java/src/main/java/com/bcv/kagami/modules/model
+
+cd /home/ubuntu/restructure/MohanBoardsNewNew/
+
+
+
+
+platform logs 
+
+tail -f /home/ubuntu/kagami-framework/apache-tomcat-9.0.45/logs/catalina.out
+
+
+
+
+
+stuidio logs 
+
+
+tail -f /home/ubuntu/kagami-studio/apache-tomcat-9.0.45/logs/catalina.out
+
+cd /home/ubuntu/kagami-studio/apache-tomcat-9.0.45/logs/
+
+
+runtime logs 
+
+
+cd /home/ubuntu/kagami/logs/MohanBoardsNewNew
+
+
+
+open project credentials 
+
+
+username : husenaiah.gandham@kagamierp.com
+pasword  : WANAparthy@544
+
+============================================================
+
+Dev2 n Dev3 Live machine password  
+
+ssh ubuntu@dev2.kagamierp.com
+ssh ubuntu@dev3.kagamierp.com
+
+password : Kgm@123$
+
+
+Mapl Live machine password 
+
+ssh ubuntu@mapl.kagamierp.com
+password : Mapl@123$
+
+Intra Runtime 
+
+
+ssh ubuntu@Intraruntime.kagamierp.com
+
+
+============================================================
+
+
+============================================================
+
+
+mysql -uroot -proot WDCL_MERGE_NEW_kagamierp < storedProcedure_ToConvertCharsetNCollate.sql
+
+Changing char set for database table 
+
+
+alter table testallfeaturest_kagamierp.kcommontransentity__role__current CONVERT TO CHARACTER SET latin1;
+{"_id":"prule_group_46289"}
+"_id" : "prule_56398", 
+
+ "groupId" : "prule_group_46289", 
+ 
+ 
+ 
+ *process_grn_33_create_140.process_grn_33_DOCMAN_68_create*
+ 
+ cleanBuildsfrelea
+ 
+  cleanBuilds 
+ https://prod.kagamierp.com/kagami-studio/project/cleanBuilds?projectId=''
+ ll
+ 
+ release build barrier 
+ https://prod.kagamierp.com/kagami-studio/project/releaseBuildBarrier?projectId=''
+ 
+https://localonpremise.kagamierp.com/kagami-studio/project/releaseBuildBarrier?projectId=project_293
+ 
+    private Map<String, String> buildMap = new ConcurrentHashMap<>();
+	private Map<String, String> deployMap = new ConcurrentHashMap<>();
+	private Map<String, String> assembleMap = new ConcurrentHashMap<>();
+ 
+ release deploy barrier 
+ https://prod.kagamierp.com/kagami-studio/project/releaseDeployBarrier?projectId=project_1543&env=prod
+ 
+  https://studio.kagamierp.com/kagami-studio/project/releaseDeployBarrier?projectId=project_41&env=studio
+ 
+ https://localonpremise.kagamierp.com/kagami-studio/project/releaseAssembleBarrier?projectId=project_88
+ https://localonpremise.kagamierp.com/kagami-studio/project/releaseBuildBarrier?projectId=project_88
+ 
+ 
+ release assemble barrier 
+ https://prod.kagamierp.com/kagami-studio/project/releaseAssembleBarrier?projectId=project_1543
+ 
+ https://prod.kagamierp.com/kagami-studio/project/releaseBuildBarrier?projectId=project_1543
+ 
+ https://localonpremise.kagamierp.com/kagami-studio/project/releaseAssembleBarrier?projectId=project_293
+
+ 
+ 
+ http://sit.kagamierp.com:7070/kagami-studio/#/workarea/project/project_3
+ 
+ 
+ 
+ id getting fetching aftrer create to assigng back 
+ 
+
+==============================================================================
+http://prod.generatedapp.kagamierp.com
+
+
+ https://prod.kagamierp.com/kagami-studio/processContract/releaseAllProcess
+ 
+ https://sit.kagamierp.com/kagami-studio/processContract/releaseAllProcess
+ 
+https://localonpremise.kagamierp.com/kagami-studio/processContract/releaseAllProcess
+
+https://localonpremise.kagamierp.com:8090/kagami-platform/logger?configurationLevel=error
+
+
+https://prod.platform.kagamierp.com:8090/kagami-platform/logger?configurationLevel=info
+ 
+ 
+ http://wdclonpremise.kagamierp.com:7070/kagami-studio/processContract/releaseAllProcess
+  https://prod.kagamierp.com/kagami-studio/processContract/releaseAllProcess
+ 
+
+git.kagamierp.com
+
+username : husenaiah.g
+password : WANAparthy@544
+==============================================================================
+pune serverl mbpl 
+
+user     : ssh ubuntu@mbpl.kagamierp.com
+password : Mbpl@123$
+
+
+no slept 3 to 5:30
+
+we are not able to face any issue..
+==============================================================================
+
+
+
+Office Network Password 
+
+KGM_Mobile_5G
+
+ChangeReady@KGM$
+
+==============================================================================
+Qa studio username and password 
+
+username : admin
+password : admin@123 
+
+
+==============================================================================
+
+prod studio
+
+admin password :   "password" : "od6rXurOdPn0cr7BPbY5Cw==",
+                   "password" : "OBoykFo3UVW3wrzvkqxEyw==", 
+				   
+			===============================	   
+				   
+ess machine access 
+
+ssh husen@ess.kagamierp.com 
+
+==============================================================================
+
+srinivas form machine ssh and password 
+
+username : ssh root@135.181.202.86
+password : srivasni#9
+
+
+==============================================================================
+
+=================================================================
+
+maven : maven installation is not required just need to download extract it place it in c drive 
+
+MAVEN_HOME   C:\apache-maven-3.6.3-bin
+Path         C:\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin
+
+
+http://prod.generatedapp.kagamierp.com:12004/kagami-generated_MohanBoardsNewNew/logger?configurationLevel=info#!/
+
+
+https://103.217.228.150:12002/kagami-generated_MohanBoards/logger?configurationLevel=info#!/
+
+
+https://103.217.228.150:8080/KagamiAuthService/auth/auth/login
+
+=================================================================
+
+
+ok will check 
+
+update live user password :
+
+select * from kagamiauth.users_auth where  USER_ID='admin';
+select * from dcgl_kagamierp.user where userid='admin';
+
+update kagamiauth.users_auth set PASSWORD='8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918' where USER_ID='admin' ;
+update dcgl_kagamierp.user set password='8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'  where userid='admin';
+
+update MohanBoards_kagamierp.user set password='8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918'  where userid='admin';
+
+update dcgl_kagamierp.user set userdomain='kagami-generated_WDCL_dummy_kagamierp';
+
+
+rd /s "\\?\D:\Kagami-Help-WorkSpace\kagami-runtime\kagami-runtime"
+
+
+
+git code pull 
+
+
+http://git.kagamierp.com/KGM_Dev/kagami-runtime.git   runtime working 
+http://git.kagamierp.com/KGM_Dev/kagami-core.git
+http://git.kagamierp.com/KGM_Dev/kagami-framework.git
+http://git.kagamierp.com/KGM_Dev/kagami-studio.git
+
+http://git.kagamierp.com/KGM_Dev/kagami-app-downloader.git
+http://git.kagamierp.com/KGM_Dev/kagami-authentication.git
+
+http://KGMS001/KGM_Dev/Kagami-R.git
+
+
+
+
+
+software installation path 
+
+username : kgm
+password : Admin@123
+
+\\192.168.1.25\kgm_soft$
+
+
+tema pulic ip   : 102.176.97.5
+aflao public ip : 102.223.20.26
+
+
+============================================================
+emergency app running : 
+
+ to stop jar running file 
+
+ stop jar file
+ contrl+c
+ jobs
+ disown -h %1
+===================================================   MohanBoards Project Jar working file 14 build  ===================================================
+ 
+ java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -Dspring.config.location=file:/home/ubuntu/kagami/download/MohanBoards/12002/config/ -Dlog=/home/ubuntu/kagami/logs/MohanBoards//2021.12.16.08.18.08 /home/ubuntu/restructure/MohanBoards/1/target/kagami-generated_MohanBoards.jar &
+
+
+
+
+ java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -Dspring.config.location=file:/home/ubuntu/kagami/download/MohanBoards/12002/config/ -Dlog=/home/ubuntu/kagami/logs/MohanBoards//2021.12.16.08.18.08 /home/ubuntu/restructure/MohanBoards/1/target/kagami-generated_MohanBoards.jar &
+
+===================================================   MohanBoards Project Jar ===================================================
+ 
+ ps -aux | grep "kagami-gen"
+ 
+ 2021.04.29.15.17.16
+
+ 
+	java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancy
+Percent=55 -XX:+UseStringDeduplication -XX:+PrintStringDeduplicationStatistics -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplic
+itGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/home/ubuntu/kagami/logs/dcgl//2021.02.12.00.29.19_gc.log -Dspring.config.location=file:/home/ubuntu/kagami/download/dcgl/12
+002/config/ -Dlog=/home/ubuntu/kagami/logs/dcgl//2021.02.12.00.29.19 /home/ubuntu/restructure/dcgl/0/target/kagami-generated_dcgl.jar & 
+
+java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -XX:+PrintStringDeduplicationStatistics -Drun.jvmArguments=-Xmx4096m -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/home/ubuntu/kagami/logs/dcgl//2021.02.12.00.29.19_gc.log -Dspring.config.location=file:/home/ubuntu/kagami/download/dcgl/12002/config/ -Dlog=/home/ubuntu/kagami/logs/dcgl//2021.02.12.00.29.19 /home/ubuntu/restructure/dcgl/1/target/kagami-generated_dcgl.jar &
+ 
+
+idc live jar command 
+
+java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -XX:+PrintStringDeduplicationStatistics -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/home/ubuntu/kagami/logs/idc_live//2021.03.01.06.17.12_gc.log -Dspring.config.location=file:/home/ubuntu/kagami/download/idc_live/12002/config/ -Dlog=/home/ubuntu/kagami/logs/idc_live//2021.03.01.06.17.12 /home/ubuntu/restructure/idc_live/1/target/kagami-generated_idc_live.jar &
+
+
+
+java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -XX:+PrintStringDeduplicationStatistics -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Xloggc:/home/ubuntu/kagami/logs/idc_live//2021.03.01.06.17.12_gc.log  -Dspring.config.location=file:/home/ubuntu/kagami/download/idc_live/12002/config/ -Dlog=/home/ubuntu/kagami/logs/idc_live//2021.03.01.06.17.12 /home/ubuntu/restructure/idc_live/1/target/kagami-generated_idc_live.jar &
+
+
+
+
+java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -Dspring.config.location=file:/home/ubuntu/kagami/download/MohanBoards/12002/config/ -Dlog=/home/ubuntu/kagami/logs/MohanBoards//2021.04.28.09.31.40 /home/ubuntu/restructure/MohanBoards/0/target/kagami-generated_MohanBoards.jar &
+
+-Xloggc:/home/ubuntu/kagami/logs/MohanBoards//2021.04.28.09.31.40_gc.log
+
+
+
+-----------------------------------------------------------------------
+
+
+
+
+https://sophas.org/ login
+
+we can download and install sophas from below website 
+
+https://localonpremise.kagamierp.com:9443 
+
+username :  husenaiah.g
+password :  Test@123 
+
+
+===========================================================
+
+===========================================================
+
+resolving db locks 
+
+
+ show full processlist;
+ kill query <thread_id>;    // processId is Id column of the processlist table
+
+ 
+===========================================================
+
+Replication setup 
+
+
+Master 1 -  160.119.108.20  (DCGL)
+
+FLUSH TABLES WITH READ LOCK;
+
+SHOW MASTER STATUS;
+
+mysql> SHOW MASTER STATUS;
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB                                       | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| mysql-bin.000113 | 21560880 | kagamiplatform,dcgl_kagamierp,Doc_kagamierp,quartz |                  |                   |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+1 row in set (0.00 sec)
+
+
+mysqldump -uroot -proot --routines --databases dcgl_kagamierp > 
+
+UNLOCK TABLES;
+
+scp dbs.sql ubuntu@dcgltema.kagamierp.com:
+
+
+CHANGE MASTER TO MASTER_HOST='102.176.97.5',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.000256', MASTER_LOG_POS=  19003704;
+
+
+======
+
+Master 2 - 102.176.97.5 (DCGL Team)
+
+
+mysqldump -uroot -proot dcgl_kagamierp hibernate_sequence dashboard_notification sequenceholder_5436 notification financevoucherconfigurations_1206 autogenarationcode > not_replicating_table.sql
+
+Mysql -uroot -proot dcgl_kagamierp < dbs.sql
+
+
+FLUSH TABLES WITH READ LOCK;
+
+SHOW MASTER STATUS;
+
+mysql> SHOW MASTER STATUS;
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB                                       | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| mysql-bin.000256 | 19003704 | kagamiplatform,dcgl_kagamierp,Doc_kagamierp,quartz |                  |                   |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+1 row in set (0.00 sec)
+
+CHANGE MASTER TO MASTER_HOST='160.119.108.20',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.000113', MASTER_LOG_POS=  21560880;
+
+Mysql -uroot -proot dcgl_kagamierp < not_replicating_table.sql
+
+
+UNLOCK TABLES;
+
+
+DCGL:  start slave;
+
+DCGL Tema : start slave; 
+
+After 2 mins
+
+DCGL : show slave status \G;
+
+DCGL Tema : show slave status \G;
+
+
+
+dcgl mysql connection 
+
+username :  mysql -u produser -p;
+password :  prod@kagamierp 
+
+
+ use dcgl_kagamierp
+ show databases;
+ show slave status \G;
+ stop slave;
+ SET GLOBAL SQL_SLAVE_SKIP_COUNTER=1;
+ START SLAVE;
+
+on DCGL aflao
+go to mysql terminal
+stop slave;
+then go to DCGL Tema mysql terminal
+stop slave;
+Then restart wherever you have to restart mysqlafter restart from both machines 
+	 
+	 START SLAVE;  from dcgl
+	 START SLAVE;  from dcgltema
+
+
+
+	 mysqldump -uproduser -pprod@kagamierp WDCL_dummy_kagamierp > WDCL_dummy_kagamierp25022021.sql
+	 
+	 check kago using below path 
+	 
+	 cd /restructure/dcgl/9/base/kagorithm-template/src/main/java/com/bcv/kagami/kagorithm/
+	 
+	 cd /home/ubuntu/restructure/MohanBoardsNewNew/436/base/kagorithm-template/src/main/java/com/bcv/kagami/kagorithm
+	 
+	 
+	 vim Kagorithm_55.java
+===========================================================
+nginx start and stop 
+
+sudo service nginx status
+sudo service nginx stop 
+sudo service nginx start  
+
+https://103.217.228.150:12002/kagami-generated_MohanBoards/api/auth/loginPage
+
+===========================================================
+mongodb start and stop 
+
+sudo service mongod start
+sudo service mongod stop 
+
+
+===========================================================
+
+redis start and stop 
+
+sudo service redis start
+sudo service redis stop
+sudo service redis restart  
+
+
+============================================================
+mysql start and stop 
+
+service mysql stop 
+service mysql start 
+ 
+sudo service mysql restart
+sudo service mysql start
+sudo service mysql stop
+
+
+============================================================
+mysql local username and password 
+
+username : root 
+password : WANAparthy@544 
+
+mysqldump -uproduser -pprod@kagamierp MohanBoardsNew_kagamierp > MohanBoardsNew_kagamierp13042021.sql
+
+============================================================
+
+Dcgl Live machine deploy procedure 
+
+
+ssh husen@prod.kagamierp.com 
+tail -f /home/ubuntu/kagami-studio/apache-tomcat-9.0.45/logs/catalina.out
+
+
+auth server application.properties file 
+
+tail -f home/ubuntu/kagami-authentication/apache-tomcat-8.5.9/logs/catalina.out 
+
+cd /kagami-authentication/apache-tomcat-8.5.9/webapps/KagamiAuthService##000/WEB-INF/classes vi application.properties
+
+
+app dowloader logs 
+
+tail -f home/ubuntu/kagami-app-downloader/apache-tomcat-8.5.9/logs/catalina.out
+
+sudo cp /home/ubuntu/restructure/MohanBoardsNewNew/121/target/docTemplate /home/
+
+
+cp /home/ubuntu/dcgl-project/kagami-app-downloader/target/kagami-app-downloader##000.war /home/ubuntu/kagami-app-downloader/apache-tomcat-8.5.9/webapps/kagami-app-downloader.war
+
+
+cp /home/ubuntu/project/kagami-app-downloader/target/kagami-app-downloader##000.war /home/ubuntu/kagami-app-downloader/apache-tomcat-9.0.45/webapps/kagami-app-downloader.war
+
+report load 
+
+http://prod.generatedapp.kagamierp.com:12004/kagami-generated_WDCL_dummy/report/reloadAllReportConfigData
+
+http://idclocal.kagamierp.com:12001/kagami-generated_DUMP/report/reloadReportConfigData?reportId=1621954634753
+
+
+http://prod.generatedapp.kagamierp.com:12004/kagami-generated_MohanBoardsNewNew/report/reloadAllReportConfigData
+
+
+https://dcgn.kagamierp.com/kagami-generated_DCGN1/report/reloadAllReportConfigData
+
+
+scp -r husen@prod.generatedapp.kagamierp.com:dcgl_dummy_kagamierp_28032021.sql C:/cygwin64/home/husenaiah.g
+scp -r backupmohanboards.sql husen@prod.generatedapp.kagamierp.com:/home/husen/
+
+
+
+
+How to start platform 
+
+
+enable platform logs :
+
+http://wdclonpremise.kagamierp.com:8090/kagami-platform/logger?configurationLevel=info
+
+http://prod.platform.kagamierp.com:8090/kagami-platform/logger?configurationLevel=info
+
+http://sit.kagamierp.com:8090/kagami-platform/logger?configurationLevel=error
+
+
+
+save all kagos 
+https://prod.generatedapp.kagamierp.com:12004/kagami-generated_MohanBoardsNewNew/kagorithm/saveAllV2?projectId=project_1543
+
+
+https://prod.generatedapp.kagamierp.com:12004/kagami-generated_MohanBoardsNewNew/kagorithm/saveAllV2?projectId=project_1543
+
+
+
+https://prod.generatedapp.kagamierp.com:12004/kagami-generated_MohanBoardsNewNew/kagorithm/saveAllV2
+
+
+https://prod.kagamierp.com/kagami-studio/kagorithm/saveAllV2?projectId=project_1543
+
+
+https://studio.kagamierp.com/kagami-studio/kagorithm/saveAllV2?projectId=project_1543
+
+
+https://sit.kagamierp.com/kagami-studio/kagorithm/saveAllV2?projectId=project_3
+
+https://sit.kagamierp.com/kagami-studio/kagorithm/updateAll?projectId=project_3
+
+
+https://prod.kagamierp.com/kagami-studio/kagorithm/updateAll?projectId=project_1516
+https://prod.kagamierp.com/kagami-studio/kagorithm/saveAllV2?projectId=project_1516
+
+
+scp -r ubuntu@mapl.kagamierp.com:MAPL_kagamierp260421.sql C:/cygwin64/home/husenaiah.g
+
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_1542" },{"$set":{"version":10}})
+
+
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_1542" },{"$set":{"version":10}})
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_17" },{"$set":{"version":10}})
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_949" },{"$set":{"version":10}})
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_469" },{"$set":{"version":10}})
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_921" },{"$set":{"version":10}})
+db.getCollection('project_1542_kagorithm').updateMany({"projectId":"project_111" },{"$set":{"version":10}})
+
+111 
+
+  "version" : 10.0,
+  
+  db.getCollection('booking').find({_id:/testing/})
+  
+  db.collection.find( { qty: { $gt: 4 } } )
+
+ http://rslr.connectbind.com/bulksms/bulksms?username=odg-wdcement&password=7429$Kgm&type=0&dlr=1&destination=+917075459707&source=WDCL&message=KKK 
+
+cd /dcgl-project/kagami-framework$ cd kagami-platform-web
+    mvn spring-boot:run 
+	
+	
+ssh husen@prod.kagamierp.com 
+tail -f /home/ubuntu/kagami-studio/apache-tomcat-9.0.45/logs/catalina.out
+
+ssh husen@prod.platform.kagamierp.com 
+
+SLBP_SalesInvoice_2593083_12695
+
+BP_SalesInvoice_2593083
+
+
+tail -f /home/ubuntu/kagami-framework/apache-tomcat-9.0.45/logs/catalina.out
+
+
+ssh husen@prod.generatedapp.kagamierp.com
+
+cd home/ubuntu/kagami/logs/WDCL_dummy
+
+
+wdclonpremise  :
+
+ssh ubuntu@41.189.173.156  or ssh ubuntu@wdclonpremise.kagamierp.com 
+wdcl@K@G@M1 
+
+
+
+SLprocess_Organization_2593219_4_countryId__onSearch_for_prule_62288
+
+
+ "processId": "BP_ItemSearch_2593068",
+    "processName": "process_ItemSearch_2593068",
+    "processLabel": "ItemSearch",
+  "processId": "SLBP_Organization_2593219_4_countryId__onSearch_for_prule_62288",
+                    "processName": "SLprocess_Organization_2593219_4_countryId__onSearch_for_prule_62288",
+
+
+wdcl live machine 
+
+ssh ubuntu@wdcl.kagamierp.com
+Erp@Wdcl#$
+
+Application  admin/238b3884ffa331513b285e9a06fc56e85ea6607df2dfdcb9e0232dd311761c80 
+
+
+idc machine ssh and password 
+
+ssh ubuntu@idc.kagamierp.com
+IDC@123$
+
+
+idc onpremise machine ssh and password 
+
+ssh ubuntu@idclocal.kagamierp.com
+IDC@123$
+
+
+KUpdateTimeStampGeneration
+
+KCreationTimestampGeneration
+
+till now verified server time and app.properties file all set to UTC
+and update datetime was with UTC 
+
+
+
+	
+mysqlbinlog -d dcgl_kagamierp mysql-bin.000821 > crm-events.txt
+
+
+================== DCGN2 ==================
+
+
+ssh ubuntu@dcgnlocal.kagamierp.com
+
+
+ssh ubuntu@dcgn2local.kagamierp.com
+
+Dcgn@123$
+
+
+http://dcgn2local.kagamierp.com:7070/kagami-studio/
+
+
+
+
+ java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:ThreadStackSize=4096 -XX:G1HeapRegionSize=32m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -Drun.jvmArguments="-Xmx4096m" -XX:MaxMetaspaceSize=512m -XX:NewSize=2048m -XX:SurvivorRatio=6 -XX:+DisableExplicitGC -Dspring.config.location=file:/home/ubuntu/kagami/download/DCGN2_LIVE/12001/config/ -Dlog=/home/ubuntu/kagami/logs/DCGN2_LIVE//2022.06.15.08.27.25 /home/ubuntu/restructure/DCGN2_LIVE/0/target/kagami-generated_DCGN2_LIVE.jar &
+
+
+===========================================
+
+
+
+========== Pnr machine ======================
+
+
+ssh -i proenv.pem ubuntu@pnr.kagamierp.com
+
+
+pnr db connection linux machine connection 
+
+
+ssh -i proenv.pem ubuntu@35.154.244.252
+
+
+========== Pnr machine ======================
+
+
+wdclonpremise studio password 
+http://wdclonpremise.kagamierp.com:7070/kagami-studio/#/
+
+admin/ Erp@Wdcl_2021$
+
+
+if we know username only then after -- sql code will be ignored then it will fetch the data based on username
+
+localonpremise 
+
+dcgl live machine :
+
+Erp@Dcgl_2021$
+
+ssh ubuntu@dcgl.kagamierp.com 
+Erp@Dcgl#*
+
+
+checking .. till now woked on tema sync issue 
+
+
+
+
+cp /var/log/mysql
+
+mysqlbinlog mysql-bin.000811
+
+scp -r ubuntu@dcgltema.kagamierp.com:temabackup15062021.sql C:/cygwin64/home/husenaiah.g
+
+pune server user : ssh ubuntu@apppl.kagamierp.com 
+password : Appl@123$
+
+
+java -jar -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:G1HeapRegionSize=4m -XX:InitiatingHeapOccupancyPercent=55 -XX:+UseStringDeduplication -XX:MaxMetaspaceSize=512m -XX:NewSize=4g -XX:+DisableExplicitGC -XX:SurvivorRatio=6 -XX:ThreadStackSize=1m -XX:InitialHeapSize=8g -XX:MaxHeapSize=8g -Dspring.config.location=file:/home/ubuntu/kagami/download/dcgl/12002/config/ -Dlog=/home/ubuntu/kagami/logs/dcgl//2022.03.15.07.10.00 /home/ubuntu/restructure/dcgl/2/target/kagami-generated_dcgl.jar &
+
+
+dcgl live machine :
+
+ssh ubuntu@dcgl.kagamierp.com 
+Erp@Dcgl#*
+
+
+dcgltema live machine :
+			
+ssh ubuntu@dcgltema.kagamierp.com
+Erp@Dcglt#*
+
+
+
+Can u plase check tema records records no in afloa db ..?
+
+
+STOP SLAVE;SET GLOBAL SQL_SLAVE_SKIP_COUNTER=100;START SLAVE;
+
+
+
+
+sdcl live machine 
+
+
+replication set up 
+
+sales invoice done 
+weightmentauthorization_5539
+packingplant 
+weightin 
+weightout 
+
+
+
+inital setup 
+
+binding server id ..ignore table properties 
+
+sudo vim  /etc/mysql/mysql.conf.d/mysqld.cnf
+
+replicate-ignore-table = kagamiauth.hibernate_sequence
+
+
+first need to take dcgl back need to restore in local db need to check how it working without any issue for copy 
+
+then copy same to tema and restore 
+
+copy tema data to local resolve issue reference and need to compare the database 
+
+(server initial setup need to do for both servers)
+
+(need to create user ) 
+create user 'replicationuser'@'%' identified by 'replicationuser';
+GRANT REPLICATION SLAVE ON *.* TO 'replicationuser'@'%';
+FLUSH PRIVILEGES;
+
+
+sudo service nginx status
+sudo service nginx start
+sudo service nginx stop 
+
+
+mysqldump -uroot -proot dcgl_kagamierp.sql > dcgldump_kagamierp21092021.sql
+mysqldump -uroot -proot dcgl_kagamierp.sql > dcgl_kagamierp21092021.sql
+
+scp -r ubuntu@dcgltema.kagamierp.com:dcgldump_kagamierp21092021.sql C:/cygwin64/home/husenaiah.g
+scp -r ubuntu@dcgl.kagamierp.com:dcgl_kagamierp21092021.sql C:/cygwin64/home/husenaiah.g
+
+scp dcglbackupnew13072021.sql ubuntu@dcgltema.kagamierp.com:
+
+
+
+mysqldump -uroot -proot apnr_kagamierp.sql > apnr_kagamierp24092021.sql
+scp -r ubuntu@dev3.kagamierp.com:pnr_live_sep24.sql.sql C:/cygwin64/home/husenaiah.g
+
+
+
+
+First Need to copy Tema Data
+
+mysqldump -uroot -proot dcgl_kagamierp > dcgltemabackup17062021.sql
+mysqldump -uroot -proot Doc_kagamierp > Doc_kagamierp17062021.sql
+scp dcglbackupnew13072021.sql ubuntu@dcgltema.kagamierp.com:
+
+mysqldump -uroot -proot dcglbackupnew13072021.sql > dcglbackupnew13072021.sql
+
+mysql -uroot -proot dcgl_kagamierp < dcglbackupnew13072021.sql
+
+
+scp -r ubuntu@dcgl.kagamierp.com:dcglbackup13072021.sql.sql C:/cygwin64/home/husenaiah.g
+scp -r ubuntu@dcgltema.kagamierp.com:dcgltemabackup17062021.sql C:/cygwin64/home/husenaiah.g
+
+mysql –uroot –pWANAparthy@544 testdcgl < C:\cygwin64\home\husenaiah.g\dcglbackup13072021.sql
+
+mysql –uroot –pWANAparthy@544 test15072021 < C:\cygwin64\home\husenaiah.g\dcgl_bkp-20-06-2021-0030.sql
+
+scp -r husen@prod.generatedapp.kagamierp.com:dcgl_bkp-20-06-2021-0030.sql C:/cygwin64/home/husenaiah.g
+
+scp -r husen@prod.platform.kagamierp.com:/home/ubuntu/restructure/MohanBoardsNewNew/153/target/docTemplate C:/cygwin64/home/husenaiah.g
+
+
+
+
+Afalo users can use application now 
+
+we will let know tema app 
+
+
+
+
+***** New ****
+Master 1 -  160.119.108.20  (DCGL)
+
+FLUSH TABLES WITH READ LOCK;
+
+SHOW MASTER STATUS;
+
+mysql> SHOW MASTER STATUS;
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB                                       | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| mysql-bin.000113 | 21560880 | kagamiplatform,dcgl_kagamierp,Doc_kagamierp,quartz |                  |                   |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+1 row in set (0.00 sec)
+
+
+mysqldump -uroot -proot --routines --databases kagamiplatform dcgl_kagamierp Doc_kagamierp quartz > dbs.sql
+
+UNLOCK TABLES;
+
+scp dbs17062021.sql ubuntu@dcgltema.kagamierp.com:
+
+aflao 
+CHANGE MASTER TO MASTER_HOST='102.176.97.5',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.001126', MASTER_LOG_POS=156;
+
+tema
+
+CHANGE MASTER TO MASTER_HOST='102.223.20.26',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.000860', MASTER_LOG_POS=156;
+
+CHANGE MASTER TO MASTER_HOST='102.176.97.5',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.001102', MASTER_LOG_POS=  63034048;
+
+
+Relay_Master_Log_File: mysql-bin.000849
+Exec_Master_Log_Pos: 287864
+ 
+CHANGE MASTER TO MASTER_HOST='dcgl.kagamierp.com',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.000849', MASTER_LOG_POS=  287864;
+
+
+
+Master_Log_File: mysql-bin.005570
+Read_Master_Log_Pos: 36296540
+above two are need to match exactly show master status file and file position
+two way which are need to run
+above thing is need to get data from another server
+second thing is need to run queries of received files that we get to know by
+Relay_Master_Log_File: mysql-bin.000849
+Exec_Master_Log_Pos: 287864
+other slave side query execution stops at mysql-bin.000849 and pos 287864
+even when slave server reads last position of master server .. we can start read from above position
+CHANGE MASTER TO MASTER_HOST='dcgl.kagamierp.com',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.000849', MASTER_LOG_POS=  287864;
+it will start again to read and write the data to slave server
+above all for MySQL5.7 master-slave synchronization failure to resolve ERROR 1594
+
+===============================================================================================================
+
+Master 2 - 102.176.97.5 (DCGL Team)
+
+
+mysqldump -uroot -proot dcgl_kagamierp hibernate_sequence dashboard_notification sequenceholder_5436 notification financevoucherconfigurations_1206 autogenarationcode > not_replicating_table.sql
+
+Mysql -uroot -proot dcgl_kagamierp < dbs.sql
+
+
+FLUSH TABLES WITH READ LOCK;
+
+SHOW MASTER STATUS;
+
+mysql> SHOW MASTER STATUS;
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB                                       | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| mysql-bin.000256 | 19003704 | kagamiplatform,dcgl_kagamierp,Doc_kagamierp,quartz |                  |                   |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+1 row in set (0.00 sec)
+
+CHANGE MASTER TO MASTER_HOST='160.119.108.20',MASTER_USER='replicationuser', MASTER_PASSWORD='replicationuser', MASTER_LOG_FILE='mysql-bin.000113', MASTER_LOG_POS=  21560880;
+
+Mysql -uroot -proot dcgl_kagamierp < not_replicating_table.sql
+
+
+UNLOCK TABLES;
+
+
+DCGL:  start slave;
+
+DCGL Tema : start slave; 
+
+After 2 mins
+
+DCGL : show slave status \G;
+
+DCGL Tema : show slave status \G;
+
+
+
+==========================  Replication Correction ===================================
+
+
+Only Tema Process
+
+Collection
+BankPayment 
+BankReceipt
+CashReceipt
+CashPayemnt 
+ContraEntries 
+Jvs 
+SalesOrders 
+
+CustomerLedger
+BankLedger 
+GeneralLedger 
+
+
+
+
+
+ select * from contraentries_1217 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by docno;
+ 
+ select * from collectionsheet_1069 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by vno;    -- matched last no DCGL-T/OR/2021/1159
+ 
+  select * from collectionsheetdetails_1070 where id in (
+ select  collectionsheetdetails_1070id from collectionsheet_1069__collectionsheetdetails_1070
+ where collectionsheet_1069id in ( select id from collectionsheet_1069 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by vno));
+
+ select  * from collectionsheet_1069__collectionsheetdetails_1070
+ where collectionsheet_1069id in ( select id from collectionsheet_1069 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by vno);
+ 
+ 
+ SELECT * FROM dcgl_kagamierp.collectionsheet_1069 where createDateTime>='2021-09-13 00:00:00'
+and suborganizationid=1 order by createDateTime desc;
+
+ select  * from collectionsheet_1069__collectionsheetdetails_1070
+ where collectionsheet_1069id in ( select id from collectionsheet_1069 where createDateTime>='2021-09-13 00:00:00' and suborganizationid=1 
+ and vno in ('DCGL-T/OR/2021/1151'));
+  select * from collectionsheetdetails_1070 where id in (
+ select  collectionsheetdetails_1070id from collectionsheet_1069__collectionsheetdetails_1070
+ where collectionsheet_1069id in ( select id from collectionsheet_1069 where createDateTime>='2021-09-13 00:00:00' and suborganizationid=1 
+ and vno in ('DCGL-T/OR/2021/1151')));
+  
+ select * from bankreceipt_374 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by receiptno;
+ 
+   select * from brlines_380 where id in (
+ select  brlines_380id from bankreceipt_374__brlines_380
+ where bankreceipt_374id in ( select id from bankreceipt_374 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by receiptno ));
+
+ select  * from bankreceipt_374__brlines_380
+ where bankreceipt_374id in ( select id from bankreceipt_374 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by receiptno );
+ 
+  select  * from bankreceipt_374__brlines_380
+ where bankreceipt_374id in ( select id from bankreceipt_374 where documentno in ('DCGL-T/BRV/2021/2095','DCGL-T/BRV/2021/2094','DCGL-T/BRV/2021/2093','DCGL-T/BRV/2021/2092','DCGL-T/BRV/2021/2087') );
+ 
+ 
+ no cashreceipt 
+ 
+ select * from cashpayment_371 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by documentno;
+  select * from cashpayment_371 where createDateTime>='2021-09-13 00:00:00' and suborganizationid=1 
+ order by documentno desc;
+  select * from cashpayment_371__cplines_377;
+ select * from cplines_377;
+ 
+ 
+ select * from bankpayment_373 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by documentno;
+ 
+ 
+ select * from bplines_379 where id in ( 
+  select  bplines_379id from bankpayment_373__bplines_379
+ where bankpayment_373id in (select id from bankpayment_373 where documentno in (
+ 'DCGL-T/ABPVN/2021/169','DCGL-T/ABPVN/2021/170','DCGL-T/DBPTV/2021/695','DCGL-T/DBPTV/2021/696','DCGL-T/DBPTV/2021/697',
+ 'DCGL-T/BPVN/2021/387','DCGL-T/BPVN/2021/388','DCGL-T/BPVN/2021/389','DCGL-T/BPVN/2021/390','DCGL-T/BPVN/2021/391','DCGL-T/BPVN/2021/392',
+ 'DCGL-T/BPVN/2021/393','DCGL-T/BPVN/2021/394','DCGL-T/BPVN/2021/395','DCGL-T/BPVN/2021/396','DCGL-T/BPVN/2021/397','DCGL-T/BPVN/2021/398','DCGL-T/BPVN/2021/399',
+ 'DCGL-T/BPTV/2021/1178','DCGL-T/BPTV/2021/1179')));
+ 
+  select  * from bankpayment_373__bplines_379
+ where bankpayment_373id in (select id from bankpayment_373 where documentno in (
+ 'DCGL-T/ABPVN/2021/169','DCGL-T/ABPVN/2021/170','DCGL-T/DBPTV/2021/695','DCGL-T/DBPTV/2021/696','DCGL-T/DBPTV/2021/697',
+ 'DCGL-T/BPVN/2021/387','DCGL-T/BPVN/2021/388','DCGL-T/BPVN/2021/389','DCGL-T/BPVN/2021/390','DCGL-T/BPVN/2021/391','DCGL-T/BPVN/2021/392',
+ 'DCGL-T/BPVN/2021/393','DCGL-T/BPVN/2021/394','DCGL-T/BPVN/2021/395','DCGL-T/BPVN/2021/396','DCGL-T/BPVN/2021/397','DCGL-T/BPVN/2021/398','DCGL-T/BPVN/2021/399',
+ 'DCGL-T/BPTV/2021/1178','DCGL-T/BPTV/2021/1179'));
+ 
+ 
+  select * from customerledger_1139 where createDateTime>='2021-09-13 00:00:00' and suborganizationid=1 
+ order by docno desc;
+ 
+
+
+
+no salesorderheadder_787
+ select * from salesorderheadder_787 where createDateTime>='2021-07-04 00:00:00' and suborganizationid=1 
+ order by ordernumber;
+
+ 
+
+ select * from bankreceipt ;
+ select * from cashreceipt ;
+ select * from cashpayment  ;
+  select * from bankpayment ;
+  select * from general ledger ;
+  select * from loadingpermit ;
+  select * from serviceinovice;
+ 
+
+
+
+if want to correct the records we need to last two data the  match the follwing table data 
+
+set foreign_key_checks=0;
+SET sql_safe_updates=0;
+SELECT * FROM dcgl_kagamierp.stockissue_477 where
+createDateTime between '2021-06-17 08:00:00' and '2021-06-17 12:00:00' order by createDateTime desc limit 200;
+select count(*) from stockissue_477;
+
+
+select * from salesinvoice_473;
+select * from loadingpermit_438;
+select * from weightmentauthorization_5539;
+select * from weighmentslip_456;
+select * from weighmentout_577;
+select * from packingplantin_5532;
+select * from stockindent_484;
+select * from stockindent_484__indentitems_457;
+select * from indentitems_457;
+select * from stockissue_477;
+select * from stockissue_477__issueitems_459;
+select * from issueitems_459;
+select * from packingplantin_5532__packerdetails_5792;
+select * from packerdetails_5792;
+
+
+
+select * from issueitems_459 where id in (select issueitems_459id
+ from stockissue_477__issueitems_459 where stockissue_477id in 
+ ('dcgl_8836','dcgl_8837','dcgl_8838','dcgl_8839','dcgl_8840'));
+ 
+ select * 
+ from stockissue_477__issueitems_459 where stockissue_477id in 
+ ('dcgl_8836','dcgl_8837','dcgl_8838','dcgl_8839','dcgl_8840');
+ 
+ 
+ bankledger done 
+ 
+ 
+
+     select * from customeraddress_402 where id in (select customeraddress_402id
+ from customerheadder_760__customeraddress_402 where customerheadder_760id in 
+ ('dcgltema_1688'));
+select *
+ from customerheadder_760__customeraddress_402 where customerheadder_760id in 
+ ('dcgltema_1688');
+  select * from customerheadder_760 where id in ('dcgltema_1688');
+  
+  
+  iteminvertoty 
+  gateentry 
+  kagoexecution 
+  finanacevocuerconfig
+  document_modl
+
+==========================  Replication Correction ===================================
+
+=========================== Data Recovery ============================================
+
+
+
+ need to create user (need to add properties )
+ 
+ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+ 
+ binding server id ..ignore table properties  
+
+                    ================== Linux ====================
+					
+					we need to check last binary logs file from list ..copy latest bin file to home directory 
+					
+					then note the start point and end point of bin file  .. based on that take required data.sql file 
+					
+					check in different backup file by adding above file (data.sql) if data is fine then run same to main live schema 
+					
+					
+
+mysql -u produser -p;   -> prod@kagamerp
+
+From Mysql terminal :
+
+show binary logs;
+
+show master status;
+
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB                                       | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+| mysql-bin.000113 | 21560880 | kagamiplatform,dcgl_kagamierp,Doc_kagamierp,quartz |                  |                   |
++------------------+----------+----------------------------------------------------+------------------+-------------------+
+
+show variables like 'datadir';
+
+How to find the directory storing MySQL binary log? 
+
++---------------+-----------------+
+| Variable_name | Value           |
++---------------+-----------------+
+| datadir       | /var/lib/mysql/ |
++---------------+-----------------+
+
+
+How to find the log-bin  storing MySQL binary log? 
+
+SHOW VARIABLES LIKE '%log_bin%';
++---------------------------------+--------------------------------+
+| Variable_name                   | Value                          |
++---------------------------------+--------------------------------+
+| log_bin                         | ON                             |
+| log_bin_basename                | /var/log/mysql/mysql-bin       |
+| log_bin_index                   | /var/log/mysql/mysql-bin.index |
+| log_bin_trust_function_creators | OFF                            |
+| log_bin_use_v1_row_events       | OFF                            |
+| sql_log_bin                     | ON                             |
++---------------------------------+--------------------------------+
+6 rows in set (0.01 sec)
+
+From Main Terminal We Can Get Log Files using below path 
+
+
+To view binary logs
+
+cd /var/log/mysql/
+
+ls -lrth
+
+Copying to Home Directory 
+
+sudo cp -r /var/log/mysql/mysql-bin.001092 /home/ubuntu 
+
+sudo mysqlbinlog -v mysql-bin.001092
+
+Extracting specied data from Main Binary Log 
+
+DataTime Format Wil be YYMMDD
+
+sudo mysqlbinlog -v --start-position=539144 --stop-position=543960 --skip-gtids /var/log/mysql/mysql-bin.001092 > starend100.sql
+
+we need to live backup store with different name then add records then check once the latest records 
+
+Adding To DB again 
+
+mysql -uproduser -pprod@kagamierp dcgltest < starend100.sql
+
+
+SET GLOBAL binlog_format = 'STATEMENT';
+SET GLOBAL binlog_format = 'MIXED';		
+SET GLOBAL binlog_format = 'ROW';
+
+
+SET GLOBAL expire_logs_days = number_of_days;
+
+
+
+
+
+ 
+                   ================== Windows ================  
+
+
+mysqlbinlog C:\cygwin64\home\husenaiah.g\mysql-bin.001092
+
+mysqlbinlog --start-position=539144 --stop-position=543960 C:\cygwin64\home\husenaiah.g\mysql-bin.001092 > D:\starend.sql
+
+mysqlbinlog --start-position=539144 --stop-position=543960 --skip-gtids C:\cygwin64\home\husenaiah.g\mysql-bin.001092 > D:\starend1.sql
+
+
+                   ================== Windows ================  
+
+
+
+
+
+
+=========================== Data Recovery ============================================
+
+
+
+
+
+
+mvn spring-boot:run -Drun.jvmArguments="-Xmx4096m" > ~/kagami-platform.log &
+
+
+sdclonpremise machine 
+
+ssh ubuntu@sdclonpremise.kagamierp.com
+sdcl@kagamierp
+
+
+loacalonpremise machine  ssh and password 
+
+ssh ubuntu@localonpremise.kagamierp.com
+
+password : KGM@123$
+
+
+UserName: ssh ubuntu@qa.kagamierp.com
+
+Password : qaubuntu@K@G@M1
+
+====================================================================================
+====================================================================================
+
+Nginx server
+
+sudo service nginx status
+sudo service nginx start
+sudo service nginx stop 
+
+
+====================================================================================
+
+
+run chartset 
+
+connect prod running app 
+
+mysql -u produser -p WDCL_dummy > sqlchartset.sql 
+
+
+====================================================================================
+
+prod db copy 
+
+
+
+mysqldump -uproduser -pprod@kagamierp wdcl1_kagamierp > /home/ubuntu/wdcl1_kagamierp_18032021.sql
+
+working call 
+
+mysqldump -uproduser -pprod@kagamierp dcgl_kagamierp > dcgl_dummy_kagamierp_17032021.sql
+
+mysqldump -uproduser -pprod@kagamierp MohanBoards_kagamierp > /home/ubuntu/MohanBoards_kagamierperperp.sql
+
+mysqldump -uproduser -pprod@kagamierp wdcl_28032021 accounttype_363 accountgroup_346 accountmaster_347 generalledger_392 > dcgl_dummy_kagamierp_28032021.sql
+
+
+local folder to localdb copy 
+
+
+mysql –uroot –pWANAparthy@544 kagamiauth < C:\cygwin64\home\husenaiah.g\dcgl_dummy_kagamierp_28032021.sql    working 
+
+
+
+sudo mysqldump -uproduser -pprod@kagamierp dcgldump_kagamierp > dcgldump_kagamierp10042021.sql
+
+scp -r MohanBoards_kagamierp11111.sql husen@sit.kagamierp.com:/home/husen/
+
+scp -r MohanBoards_kagamierp20042021 husen@prod.generatedapp.kagamierp.com:/home/husen/backupmohanboards2021.sql
+
+
+scp -r MohanBoards_kagamierp11111.sql husen@prod.generatedapp.kagamierp.com:/home/husen/
+=====================================================================================
+
+
+utf8mb4_unicode_ci
+
+
+
+prod to local copy 
+
+scp -r husen@prod.generatedapp.kagamierp.com:MohanBoards_kagamierperperp.sql C:/cygwin64/home/husenaiah.g
+
+
+scp -r husen@sit.kagamierp.com:MohanBoards_kagamierp11111.sql C:/cygwin64/home/husenaiah.g
+
+
+
+sudo mysqldump -uproduser -pprod@kagamierp  -h prod.generatedapp.kagamierp.com C:/cygwin64/home/husenaiah.g/MohanBoards_kagamierp20042021.sql >
+ home/ubuntu/backupmohanboards.sql
+
+ 
+sudo mysqldump -uproduser -pprod@kagamierp  -h prod.generatedapp.kagamierp.com C:/cygwin64/home/husenaiah.g/MohanBoards_kagamierp20042021.sql > /home/ubuntu/backupmohanboards.sql
+
+
+scp -r MohanBoards_kagamierperperp.sql husen@prod.generatedapp.kagamierp.com:/home/husen/
+
+=====================================================================================
+
+weighbridge integration 
+
+
+
+
+
+
+=======================================================================================
+
+compling policies in runtime 
+
+util/gc
+
+util/compilebypolicyid?policyId='abc'
+
+util/compileAllPolicy
+
+
+
+
+
+
+
+
+
+=====================================================================================
+
+download files from live machine to local
+
+ downloading log files from live ubuntu to local
+ from local machine need to run this command
+
+scp -r ubuntu@dcgl.kagamierp.com:/home/ubuntu/kagami/logs/dcgl/2020.11.19.03.10.26-2020-11-23-1.log /home/
+
+
+scp -r ubuntu@wdcl.kagamierp.com:/home/ubuntu/kagami/logs/WDCL_LIVE/2021.03.13.08.10.60.2022-05-07.9.gz /home/
+
+scp -r ubuntu@wdcl.kagamierp.com:/home/ubuntu/kagami/logs/WDCL_LIVE/2021.03.13.08.10.60.2022-05-08.0.gz /home/
+
+------------------------------------------------------------------------------------------------
+
+
+scp -r husen@prod.generatedapp.kagamierp.com:/home/ubuntu/WDCL_dummy_kagamierp_20210225.sql /home/
+
+
+
+
+
+
+
+========================================================================================================
+
+
+Weight Bridger Operation 
+
+
+Weight Bridger Operation 
+
+when we connect weigh bridge reader to cpu it will keep send data to serial port 
+when we connect weigh bridge it will connect automatically specific port that is part weigh bridger reader (COM3)
+COM3 lable is there in the machine it self 
+
+we have utility to read data from serial port 
+
+
+
+
+
+
+
+
+
+
+
+select distinct(CustomerHead
+der_760_.id) 
+ from CustomerHeadder_760 CustomerHeadder_760_ left join CustomerHeadder_760_.CustomerAddress_402 CustomerHeadder_760_CustomerAddress_402_  
+ order by CustomerHeadder_760_.updateDateTime desc ,CustomerHeadder_760_.createDateTime desc
+ 
+
+
+ 
+ delete from mysql.proc WHERE db LIKE <yourDbName>;
+ 
+ delete stored procedure 
+ 
+ mysqldump --routines --no-create-info --no-data --no-create-db --skip-opt mydb > mydb.sql
+ 
+ 
+ it seems enitity metadata fetching null 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2021-05-13 10:39:56 
+ 
+ 
+
+ Item.ItemCommercial.isprimaryId                     is literal  0-Yes 
+ Item.ItemCommercial.customerHeadderId               salespricelist.customerheader.id 
+
+
+  Kagorithm_473
+
+ 
+ 
+  	{"Plant_18":{"sheetNumber":"1",
+	"divisioniddata":"Plant_18.Division_15.id",
+	"organizationiddata":"Plant_18.K_organization_89.id"}}
+	
+	
+	
+	
+	
+	rror while processing policy(policy_770088) with Type (COMPUTE) in process (BP_Payme
+ntAdviceslip_2593136) and Verb (CREATE) and Policy : {"id":"policy_770088","type":"compute","rules":[{"@type":"rule","condition":{"@type":"logical","implicit":false,"recurs
+ive":false,"type":"all","conditions":[
+
+g
+
+
+application is up and runnning on pune server with below url 
+
+https://apppl.kagamierp.com/kagami-generated_MohanBoards/#!/
+
+Thanks for the support @srinivas and @su
+
+
+
+
+
+
+
+cp /home/ubuntu/restructure/MohanBoards/14/target/kConfigurationTemplate /home/ubuntu/restructure/MohanBoardsNewNew/43/target
+
+
+
+
+
+
+
+
+
+
+https://prod.kagamierp.com/kagami-studio/#/workarea/project/project_1543/kagorithm-builder/module_14/subModule_42/Kagorithm_461
+
+
+
+
+
+Option 1: Set slave_exec_mode to IDEMPOTENT
+ It will suppress duplicate-key and no-key-found errors. 
+ Default slave_exec_mode is STRICT  means no such suppression takes place
+ 
+ stop slave; SET GLOBAL SQL_SLAVE_SKIP_COUNTER=1; START SLAVE;
+
+ it is boz of server down ..
+ 
+ 
+ 
+ 
+ mongoServer
+ 
+ 
+ {
+    "_id" : "112",
+    "environment" : "mbpl_live",
+    "acquired" : false,
+    "index" : "0",
+    "serverAddress" : "prod.kagamierp.com",
+    "serverPort" : "27017",
+    "user" : "runtimeDBAdmin",
+    "pass" : "4f312c0718fb97e0df2b8baad0265049",
+    "sslEnabled" : false,
+    "db" : "kagami_studio"
+}
+ 
+ 
+ 
+ 
+ 
+  const data = [{  
+        name: 'Ayaan',  
+        age: 26  
+        },{  
+         name: 'Ahana',  
+         age: 22  
+         },{  
+         name: 'Peter',  
+         age: 40      
+         },{  
+         name: 'Virat',  
+         age: 30  
+         },{  
+         name: 'Rohit',  
+         age: 32  
+         },{  
+         name: 'Dhoni',  
+         age: 37  
+         }]  
+     const columns = [{  
+       Header: 'Name',  
+       accessor: 'name'  
+       },{  
+       Header: 'Age',  
+       accessor: 'age'  
+       }] 
+	   
+	   
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	
+	 packingplant ,
+	 salesinvoice,
+	 stockissue,
+	 gateentry,
+	 grnheader,
+	
+	 n ledger tables @Bhargav KGM we need to match these tables
+	 
+	 	 loadingpermit 
+		 weighmentIn
+		 collectionsheet 
+	 
+	 
+	 
+	 
+	 
+I have copied tema records to aflao db  
+	 
+ColllectionSheet
+Bankreceipt 
+BankPayment 
+CashPayment 
+ContraEntries 
+CustomerLedger
+BankLedger 
+CashLedger
+VendorLedger
+ServiceInvoice 
+Jvs
+SalesOrders 
+	 
+	 Pls ask them to use aflao app .. till next replica configuration
+	 
+	 have yu copied user data to aflao 
+	 
+	 pls discuss with them let us know free time for data dump  
+	 
+	 
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	   
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ "entityId" : "CreditdebitnoteTemplate_1767",
+ 
+  "entityId" : "EinvoiceTemplate_1735",
+ 
+ 
+ 
+ temp_xcGVZgVFaceI
+ 
+ temp_be0gn2nspqn
+ 
+ 
+ 
+ temp_qvor8rhh5e
+ 
+ 
+ 
+
+
+previousTaxLInesSet          itrVdrlines.childTaxLines
+
+
+
+new taxllines -> taxLinesSet
+
+currentTaxLinesSet        taxLinesSet
+
+
+
+
+
+
+credit or debit Note 
+
+
+finance note process 
+
+
+lines 
+on hsn code 
+setTaxComponentsFromAddressToItem
+
+
+
+
+ondebit column 
+calculationFromFormulaBuilderAtHeader
+
+
+----------- chiles lines amountbreakdown
+amount filed 
+calculationFromFormulaBuilderAtHeader
+
+
+summary lines 
+calculationFromFormulaBuilderAtHeader
+https://prod.kagamierp.com/kagami-studio/#/workarea/project/project_1543/kagorithm-builder/module_15/subModule_46/Kagorithm_339
+
+
+021-10-14 16:48:33.131  INFO 272518 --- [qtp1199894489-151] com.bcv.kagami.kagorithm.Kagorithm_338   : ---->> execution of instruction type  check new tax lines set
+
+
+
+temp_z6ak9k4r3ca
+
+
+ [TaxLines_1216[id = temp_2689807580351533, formula = 0, gross = 0.0, amount = 0.0, taxComponentsId = prod_10, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807588957192, formula = (gross*DisPer)/100, gross = 0.0, amount = 0.0, taxComponentsId = prod_11, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807657132994, formula = gross-Discount+CFreight+CInsurance+CFreightItem, gross = 0.0, amount = 0.0, taxComponentsId = prod_1006, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807667674920, formula = 6, gross = 0.0, amount = 0.0, taxComponentsId = prod_7, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807679809894, formula = ((gross-Discount)*SGSPer)/100, gross = 0.0, amount = 0.0, taxComponentsId = 0, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807690137128, formula = 6, gross = 0.0, amount = 0.0, taxComponentsId = prod_8, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807699575718, formula = ((gross-Discount)*CGSPer)/100, gross = 0.0, amount = 0.0, taxComponentsId = 1, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ], TaxLines_1216[id = temp_2689807733367031, formula = NetGross+SGST+CGST+IGST, gross = 0.0, amount = 0.0, taxComponentsId = prod_5, componentsOrder = 0.0, ispercentageEnumeratorId = null, isitemLevelEnumeratorId = null, concatedName = , baseformula = , additionalInfo = 0.0, ]]
+
+
+
+
+
+paper po policy 
+policy_778142
+
+
+
+
+org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:113)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:73)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:162)
+	at org.hibernate.internal.AbstractSharedSessionContract.getQueryPlan(AbstractSharedSessionContract.java:613)
+	at org.hibernate.internal.AbstractSharedSessionContract.createQuery(AbstractSharedSessionContract.java:725)
+	... 191 common frames omitted
+Caused by: org.hibernate.QueryException: could not resolve property: nextRoles of: com.bcv.kagami.modules.model.Item_35
+	at org.hibernate.persister.entity.AbstractPropertyMapping.propertyException(AbstractPropertyMapping.java:77)
+	at org.hibernate.persister.entity.AbstractPropertyMapping.toType(AbstractPropertyMapping.java:71)
+	at org.hibernate.persister.entity.AbstractEntityPersister.toType(AbstractEntityPersister.java:2038)
+	at org.hibernate.hql.internal.ast.tree.FromElementType.getPropertyType(FromElementType.java:412)
+	at org.hibernate.hql.internal.ast.tree.FromElement.getPropertyType(FromElement.java:520)
+	at org.hibernate.hql.internal.ast.tree.DotNode.getDataType(DotNode.java:695)
+	at org.hibernate.hql.internal.ast.tree.DotNode.prepareLhs(DotNode.java:269)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:209)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:114)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:109)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.r
+	
+	
+	  @Column(name = "nextroles")
+        @JsonProperty("nextRoles")
+        private String nextRoles;
+        @ManyToOne(fetch = FetchType.EAGER)
+		
+		
+		 @Column(name = "nextroles")
+        @JsonProperty("nextRoles")
+        private String nextRoles;
+
+		
+		
+		
+		===================================
+		
+		{"Employee_11":{"sheetNumber":"5",
+		"empname":"Employee_11.empName",
+"empcode":"Employee_11.empCode",
+"statusremark":"Employee_11.statusRemark",
+"dateofjoiningdateformat":"Employee_11.dateOfJoining",
+"email1":"Employee_11.email1",
+"fathersname":"Employee_11.fathersName",
+"dateofbirth dateformat":"Employee_11.dateOfBirth",
+"qulificationid":"Employee_11.EducationDetails_31.qualificationId",
+"Institution":"Employee_11.EducationDetails_31.institution",
+"departmentsid":"Employee_11.departmentsId",
+"cellno":"Employee_11.cellNo",
+"privatemail":"Employee_11.privateMail",
+"Aadhaar no":"Employee_11.aadhaarNo",
+"panno":"Employee_11.panNo",
+"categoryid":"Employee_11.Category_18.id",
+"positionid":"Employee_11.Position_22.id",
+"nationalityid":"Employee_11.Nationality_30.id",
+"genderid":"Employee_11.Gender_14.id",
+"maritalstatusid":"Employee_11.MaritalStatus_15.id",
+"bloodgroupid":"Employee_11.BloodGroup_16.id",
+"oragaid":"Employee_11.Organization.id",
+"address":"Employee_11.AddressInformation_34.address",
+"address 1":"Employee_11.AddressInformation_34.address1",
+"pincode":"Employee_11.AddressInformation_34.pincode",
+"addresstypeid":"Employee_11.AddressInformation_34.AddressType_35.id",
+"countriesid":"Employee_11.AddressInformation_34.Countries_36.id",
+"bankdetails_33id":"Employee_11.BankDetails_33.bankAccount",
+"ifsc code":"Employee_11.BankDetails_33.ifscCode",
+"ua no":"Employee_11.BankDetails_33.uanumber",
+"pf no":"Employee_11.BankDetails_33.pfno"
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+user     : ssh ubuntu@mbpl.kagamierp.com
+password : Mbpl@123$
+
+
+
+
+he is nice guy 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+reportingTo   relationship name 
+
+
+reportingToEmployee
+
+
+
+
+
+ 
+  
+
+  
+client side configuration 
+   
+
+
+
+
+
+
+
+
+
+server side  configuration 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

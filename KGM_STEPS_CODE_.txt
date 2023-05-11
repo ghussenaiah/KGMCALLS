@@ -1,0 +1,521 @@
+
+
+
+==================================================================  CREATE  ======================================================================
+
+
+==================================================================  CREATE  ======================================================================
+
+
+==================================================================  VIEW  ======================================================================
+
+
+
+==================================================================  VIEW  ======================================================================
+
+
+==================================================================  COMPUTE  ======================================================================
+==================================================================  COMPUTE  ======================================================================
+
+
+==================================================================  EMAIL  ======================================================================
+
+
+ We are sending emails from RuntimeUtilsServiceImpl class sendMailUsingStoreProcedure method it will triiger at every 30 Secs 
+  
+ first fetcing data from email_entity table with status=0 ;
+
+
+ 	String downloadUrl = FileAndPathConstants.HTTPS_URL_PREFIX + hostIp + StringConstants.COLON + serverPort
+				+ FileAndPathConstants.PATH_SEPERATOR + appName + FileAndPathConstants.DMS_DOWNLOAD_DOCUMENT_DOC_ID;  
+
+				we are above code to sending the attachment in the email 
+
+ we are sending mails only for last 7 days records 
+
+
+
+	                    HtmlEmail email = new HtmlEmail();
+
+						email.setAuthenticator(new DefaultAuthenticator(userName, password));  // noreply@kagamierp.com and  Dev@stage2
+						email.setStartTLSEnabled(true);
+						email.setSendPartial(true);
+						email.setSmtpPort(Integer.parseInt(port));   // 587 
+						email.setSslSmtpPort(port);                  // 587
+						email.setHostName(host);                     // smtp.office365.com
+
+						email.setTo(toAddressList);
+
+						email.setBcc((bccList));
+
+						email.setCc((ccList));
+
+
+						EmailAttachment attachment1 = new EmailAttachment();
+										attachment1.setURL(new URL(emailAttachment.getUrl()));   https://localhost:9099/kagami-generated_loadtest/dms/downloadDocument?docId=12162612612  will be added here 
+										attachment1.setDisposition(EmailAttachment.ATTACHMENT);
+										attachment1.setDescription(emailAttachment.getAttchmentDescription());
+										attachment1.setName(emailAttachment.getAttchmentName());
+										email.attach(attachment1);
+
+
+		Set<InternetAddress> internetAddresses = new HashSet<InternetAddress>();
+
+		for (EmailAttendee address : addresses) {
+			if (address != null) {
+				InternetAddress internetAddress = new InternetAddress();
+				boolean valid = EmailValidator.getInstance().isValid(address.getEmail());
+				if (valid) {
+					internetAddress.setAddress(address.getEmail());
+					internetAddress.setPersonal(address.getUsername());
+					internetAddresses.add(internetAddress);
+				} else {
+					log.error("mail wont be sent to:::::::::::::: {}", address);
+				}
+			} else {
+				log.error("mail wont be sent as address is null");
+			}
+		}
+		return internetAddresses;
+
+
+
+						email.setFrom(fromAddress);
+						email.setSubject(emailEntity.getEmailSubject());
+
+
+             // For more information login to:
+
+
+
+			 // for this we are using applicationUrl property of application.properties file 
+
+
+				if (applicationUrl != null) {
+			             supportemail = (applicationUrl.contains(PropertyKeyConstants.HTTP_PREFIX) ? applicationUrl
+					     : (applicationUrl.contains(PropertyKeyConstants.HTTPS_PREFIX) ? applicationUrl
+							: PropertyKeyConstants.HTTP_PREFIX + applicationUrl));
+	          	} else {
+			             supportemail = PropertyKeyConstants.HTTP_PREFIX + hostIp + StringConstants.COLON + port
+					+ StringConstants.FORWARD_SLASH + appName;
+		        }
+
+
+                   String url = "<html><font size=2 color=blue><br><a href=\" " + supportemail
+									+ StringConstants.BACK_SLASH_CLOSE_ANGLE_BRACKET + supportemail
+									+ " </a></font></html>";
+							email.setHtmlMsg(finalMessage.concat("<html><font size=3><br><br><br>"
+									+ "For more information login to:" + "</html></font>" + url));
+
+
+
+						email.send();
+
+
+
+
+ after sending mail we are updating status =1 in email_entity table ;
+
+
+
+
+
+
+
+
+
+==================================================================  EMAIL  ======================================================================
+
+
+==================================================================  UPDATE  ======================================================================
+==================================================================  UPDATE  ======================================================================
+
+
+
+==================================================================  HIERARCHY  ======================================================================
+==================================================================  HIERARCHY  ======================================================================
+
+
+==================================================================  CALENDAR  ======================================================================
+==================================================================  CALENDAR  ======================================================================
+
+
+
+==================================================================  DOCMAN  ======================================================================
+ 
+VerbController3 class -> OnRun it will call the 
+
+DocmanService class -> execute() method
+
+
+REDIS TABLE -> metedata 
+
+Map<String, Object> metaDataMap = metadataSerive.getMetaDataMapWithPropertyValueAsObject(uniqueEvent,
+					GenerationConstants.DOCMAN);
+					
+	fetching medata using uniqueEvent and property type  DOCMAN
+	
+	
+REDIS TABLE -> entitymetadata
+	
+List<EntityMetaData> entityMetadataList = entityMetadataSerive.getEntityMetaDataFromMetaData(uniqueEvent);
+
+     fetching entitymetadata using uniqueEvent 
+	 
+	 above thing contains both primary entity Data and Template Entity 
+	 
+	 
+	 
+	 
+	 log.info("~~~~1111~~~reading metadata from redis: {}", st.getTime());    stopwatch start time 
+	 
+	
+			KDocumentMapper kDocumentMapper = new KDocumentMapper();
+			
+			kDocumentMapper.setDynamicFileName(message);
+			kDocumentMapper.setStorable(docManRequisit.getStorable());
+			kDocumentMapper.setRotation(docManRequisit.getRotation());
+			kDocumentMapper.setMergable(docManRequisit.getMergable());
+			kDocumentMapper.setTranslate(docManRequisit.getTranslate());
+			kDocumentMapper.setTemplateId(docManRequisit.getTemplateId());
+			kDocumentMapper.setBulkKagotemplate(docManRequisit.getBulkKagotemplate());
+	 
+	 
+	 
+	 populatinng all details for kDocumentMapper
+	 
+	 log.info("Template Entity:: {} :::: Entity Id:: {}", templateEntityId, entityId);
+
+	
+     Now executePolicyViaTempRuntimeContext() method will be called it will call the kago and deserialing the value 
+	 
+	 both parent and child values will be deserialized we can see something in console 
+	 
+	 log.info("entity object :: {}", entityObject);
+	 log.info("template object :: {}", templateObject);
+	 
+	 after policy execution template object will updated with new values and converted to map type and trying to save in db
+	 
+	 
+	 	Map map = parser.parseToMapFromObject(templateObject);
+	    log.info("template object after policy :: {}", map);
+		
+		
+		Now adding above map to kDocumentMapper
+		
+		kDocumentMapper.getAttributeMap().add(map);
+		
+		
+		
+		Now trying to save  kDocumentMapper in document_model table
+
+	    log.info("~~~~11111eleven~~~total file upload stuff {}", st.getTime());
+		log.info("docId : {}", docId);		
+		
+		if document already generated then checking entity file attribute value if it there then  then document alreday present so it is trying to upodate new file kDocumenetMapper configuration 
+		
+		otherwise it will save in kago 
+		
+			log.info("updating existing docId : {}", existingDocId); 
+			
+			or 
+			
+			
+			log.info("updatedEntity::: {}", updatedEntity.toString());
+		
+		
+		
+		
+		
+		If docManRequisit contains view step then it will send (download url )url to ui 
+		
+		
+		It willl call viewDocument1 method 
+		
+		DMSController  class viewDocument1() method will be called 
+		
+		
+		Uisng docId we are fetch document releated information from document_model table 
+		
+		DocumentModel documentFromDb = documentservicemodel.getFile(docId);
+		ResponseEntity<InputStreamResource> response = null;
+		byte[] documentConfigurations = documentContentCache.get(docId);
+		
+		
+		log.info("docId" + docId);
+		
+		Now fetching docman content from redis using templateId 
+		
+		
+		log.info("fetching template " + kDocumentMapper.getTemplateId());
+		
+		
+@RedisHash("DocumentTemplateContract")
+		
+		
+		DocumentTemplateDTO documentTemplateDTO = documentTemplateReadService
+				.getDocumentTemplateData(kDocumentMapper.getTemplateId());
+				
+		log.info("checking template name:" + documentTemplateDTO.getDocumentName() + "and  template id:"+ documentTemplateDTO.getId());
+		
+		getting content from documentTemplateDTO and decoding it 
+		
+		
+		then now are trying to values in this html content part 
+		
+		
+		log.info("parameter List:::" + parameterList);    it is fetching only #P values from html conent 
+
+
+        log.info("docmument mapper List:::" + kDocumentMapper.getAttributeMap());   this values are generated when executing kago or policy 		
+		
+		
+	    
+		log.info("Parameter Match" + paramMatch + " :::::" + attributeValue);    // attributeValue is actual attribute prining for every variable 
+		
+		
+		
+		log.info("converted time" + formattedValue);   // for time 
+		log.info("converted date" + formattedValue);   // for date 
+		
+		
+		
+		
+	     log.info("inside QR code code please work ");   // for qrcode 
+		
+		
+		
+		 log.info("Main tempTemplate::" + tempTemplate);   // we are priniting the complete html page 
+		 
+		 String[] mainTableContent = StringUtils.substringsBetween(tempTemplate, "<!-- mainbody Starts here -->",
+					"<!-- mainbody Ends here -->");
+					
+					
+		 log.info("Main containt::" + mainTableContenttemp);
+		 
+		 
+		Now we are working on html body content here 
+
+
+
+       Elements elements = doc.getElementsByTag("table");      // fething all table and iterating each table and populating the data 
+
+	   
+		log.info("tableContent :::" + tableContent)
+		
+		
+			// log.info("Document Parameter Map:::" + documentParameterMap.entrySet());
+		
+		Html three parts again clubling here 
+		
+		StringBuilder convertedTemplate = new StringBuilder();
+		
+		
+		tempTemplate = headString + mainTableContenttemp + tailString;
+			log.info("headString :::" + mainTableContentnew);
+			log.info("tempTemplate :::" + tempTemplate);
+			log.info("tailString :::" + tailString);
+			
+			convertedTemplate.append(tempTemplate);
+			
+			
+			
+			log.info("convertedTemplate :::" + convertedTemplate);   it is final step t verify the conent of the html page 
+			
+			convertedTemplate converted to ->  string converted to -> byteArray[]
+			
+			
+			targetStream = new ByteArrayInputStream(byteArray);
+			
+			
+			
+			response = new ResponseEntity<InputStreamResource>(new InputStreamResource(targetStream), responseHeaders,
+				HttpStatus.OK);
+		
+		
+
+
+==================================================================  DOCMAN  ======================================================================
+
+==================================================================  GROUP  ======================================================================
+==================================================================  GROUP  ======================================================================
+
+
+==================================================================  UI INPUT  ======================================================================
+==================================================================  UI INPUT  ======================================================================
+
+
+==================================================================  INVOKE  ======================================================================
+==================================================================  INVOKE  ======================================================================
+
+
+
+==================================================================  COPY CREATE  ======================================================================
+==================================================================  COPY CREATE  ======================================================================
+
+
+==================================================================  SWITCH  ======================================================================
+==================================================================  SWITCH  ======================================================================
+
+
+
+==================================================================  KCONFIG  ======================================================================
+==================================================================  KCONFIG  ======================================================================
+
+
+==================================================================  UPLOAD =====================================================================
+
+On start call belowe thing will come as response 
+
+ "uiResource": {
+      "stepInfo": {
+        "processName": "process_UploadAttendance_2593240_upload_29",
+        "stepName": "process_UploadAttendance_2593240_UPLOAD_286_upload",
+        "verb": "upload",
+        "entityName": "ConsolidateAttendance_67",
+        "excelMap": {
+          "ConsolidateAttendance_67.slno": "SLNo",
+          "ConsolidateAttendance_67.daysPresent": "Present Days",
+          "ConsolidateAttendance_67.ProjectPlan.pcode": "Project Code",
+          "ConsolidateAttendance_67.Employee_8.employeeNo": "Employee Number"
+        }
+      }
+    },
+
+
+
+Next it will call 
+https://dev2.kagamierp.com:12010/kagami-generated_pnr_big_bang/verb/bulk/getMetaDatas
+
+payload	{"processName":"process_UploadAttendance_2593240_upload_29","stepName":"process_UploadAttendance_2593240_UPLOAD_286_upload"}
+
+
+Response for the above request 
+
+	{
+  "BulkUploadXmlObj": [
+    {
+      "column": "0",
+      "attribute": {
+        "value": "ConsolidateAttendance_67.slno"
+      },
+      "sheet": "0",
+      "displayName": "SLNo",
+      "common": false,
+      "optional": false
+    },
+    {
+      "column": "1",
+      "attribute": {
+        "value": "ConsolidateAttendance_67.ProjectPlan.pcode"
+      },
+      "sheet": "0",
+      "displayName": "Project Code",
+      "common": false,
+      "optional": false
+    }
+  ],
+  "MetaData": [
+    {
+      "id": "process_UploadAttendance_2593240_upload_29.process_UploadAttendance_2593240_UPLOAD_286_uploadEXCELMAPPING",
+      "eventName": "process_UploadAttendance_2593240_upload_29.process_UploadAttendance_2593240_UPLOAD_286_upload",
+      "propertyType": "EXCELMAPPING",
+      "metaDataStringValue": "[{\"column\":\"0\",\"sheet\":\"0\",\"attribute\":{\"value\":\"ConsolidateAttendance_67.slno\"},\"displayName\":\"SLNo\",\"common\":false,\"optional\":false},{\"column\":\"3\",\"sheet\":\"0\",\"attribute\":{\"value\":\"ConsolidateAttendance_67.daysPresent\"},\"displayName\":\"Present Days\",\"common\":false,\"optional\":false},{\"column\":\"2\",\"sheet\":\"0\",\"attribute\":{\"value\":\"ConsolidateAttendance_67.Employee_8.employeeNo\"},\"displayName\":\"Employee Number\",\"common\":false,\"optional\":false},{\"column\":\"1\",\"sheet\":\"0\",\"attribute\":{\"value\":\"ConsolidateAttendance_67.ProjectPlan.pcode\"},\"displayName\":\"Project Code\",\"common\":false,\"optional\":false}]"
+    }
+  ]
+}
+
+
+after upload the document 
+
+https://dev2.kagamierp.com:12010/kagami-generated_pnr_big_bang/dms/uploadDocument
+
+with file as binary type 
+
+reponse will be       {data:34837473434922}
+
+
+next it will call 
+
+
+https://dev2.kagamierp.com:12010/kagami-generated_pnr_big_bang/verb/bulk/getExcelSheetHeaders?docId=1677062925700&
+eventName=process_UploadAttendance_2593240_UPLOAD_286_upload&processName=process_UploadAttendance_2593240_upload_29
+
+response for above request 
+
+[
+  {
+    "column": "0",
+    "attribute": {
+      "value": "ConsolidateAttendance_67.slno"
+    },
+    "sheet": "0",
+    "displayName": "SLNo",
+    "common": false,
+    "optional": false
+  },
+  {
+    "column": "3",
+    "attribute": {
+      "value": "ConsolidateAttendance_67.daysPresent"
+    },
+    "sheet": "0",
+    "displayName": "Present Days",
+    "common": false,
+    "optional": false
+  },
+  {
+    "column": "2",
+    "attribute": {
+      "value": "ConsolidateAttendance_67.Employee_8.employeeNo"
+    },
+    "sheet": "0",
+    "displayName": "Employee Number",
+    "common": false,
+    "optional": false
+  },
+  {
+    "column": "1",
+    "attribute": {
+      "value": "ConsolidateAttendance_67.ProjectPlan.pcode"
+    },
+    "sheet": "0",
+    "displayName": "Project Code",
+    "common": false,
+    "optional": false
+  }
+]
+
+
+
+
+
+==================================================================  UPLOAD  ======================================================================
+
+
+==================================================================  WAIT  ======================================================================
+==================================================================  WAIT  ======================================================================
+
+
+==================================================================  FETCH  ======================================================================
+==================================================================  FETCH  ======================================================================
+
+==================================================================  CREATE  ======================================================================
+==================================================================  CREATE  ======================================================================
+
+
+
+
+
+================================================================== WHILE USER LOGIN ============================================================
+
+/getDashboard 
+
+PresentationRuntimeResourceController class will be called 
+
+
+
+
+
+
+

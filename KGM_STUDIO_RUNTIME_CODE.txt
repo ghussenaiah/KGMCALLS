@@ -1,0 +1,646 @@
+
+
+
+
+
+Runtime Code Each Service
+===============================================================================================================================
+
+Notes : In bpm request receiving as string and we are sending every response as string  
+
+==========================   Process Controoler  ======================
+
+BusinessProcessContoller class 1
+                         
+						 process()  method 1 
+						 
+                         
+                         processRequest() method  2
+
+
+BusinessProcessExecutor  class 2
+						 
+						 executeProcess()  method 3 
+						 executeProcess2() method 4 
+						 
+TreeProcessController    class 3 
+
+                         executeProcess()  method 5 
+						 
+TreeProcessControllerStateManager2  class 4 
+
+                         executeProcess()  method 6 
+						 onProcessRunning() method 7 
+						 
+TreeProcessStateActionHandler    class 5 
+
+                         onRiun()   method 8 		
+
+
+TreeProcessExecutor       class 6 
+
+                         executeProcess()  method 9 		
+						 
+
+
+==========================   Process Controoler  ===========================
+
+=========================  Verb controller =================================
+
+VerbController3    class 1    
+                          
+						  executeVerb() method 1 
+						  
+						  
+						  executeVerb2()   method 2 
+						  
+						  
+						  from this method each state of the verb will be execute (  IDLE,CREATED_WAIT,LOADUI,WAIT,VALIDATED_WAIT,VALIDATED,-> onVerbRun,RUN_WAIT)
+  						  
+						  
+						  
+
+
+
+=========================  Verb controller =================================
+						 
+
+
+						 
+========================== BUILD CODE ===============================================
+
+ProjectController  Class 1  
+					       generateBuild() method 1 
+BuildServiceImpl   Class 2 
+                           generateBuild() method 2   						   
+
+
+
+========================== BUILD CODE ===============================================
+
+========================== DEPLOYCODE CODE ==========================================
+
+ProjectController  Class 1  
+
+                            deployApp() method 1
+
+
+========================== DEPLOYCODE CODE ==========================================
+
+						 
+
+
+========================= APP BOOT CODE ================================================
+
+    there is one post construct method in clas
+	
+	KagamiSchemaExecutor class 
+
+    @PostConstruct
+	public void execute() throws Exception {
+	
+		quartzSchema();
+		clearQuartzTablesIfExists();
+		migrateSchema();
+		createViews();
+		executeDefaultScript();
+	    createOrAlterSchema();
+		systemStoredProceduresSchema();
+		
+		
+	}
+
+
+========================= APP BOOT CODE ================================================
+
+
+
+/busiessprocess 
+
+1  getuserToken 
+2  getWebTokenTimeout
+3  updateLastAccessTime
+
+4  converting request to BpmInputContext
+5  accessLogService.markEntry
+6  Executing memory calculator 
+
+7  before execting actual we are checking dyamic event ( on cancel or on save )   if not then execting actual process 
+8  In dymaic events ONSAVE ONCANCEL ONLOAD ONCHANGE we are calling the kagorithm
+
+9 
+
+
+
+
+
+
+===============================================================================================================================
+
+
+
+
+
+
+
+
+Studio Code Process Save and Build and Deploy Code 
+===============================================================================================================================
+
+
+
+============================= Deploy code ====================================================================================
+
+Note 1 while app boot time we are fetching the record from app settings and fetchg the all user details form user table  
+
+then iterating the each user and inserting the data into usersetting table 
+
+Note 2 
+
+
+
+
+
+
+============================= Deploy code ====================================================================================
+===============================================================================================================================
+
+
+
+
+
+
+
+
+
+
+App Downloader Code 
+===============================================================================================================================
+===============================================================================================================================
+
+
+
+Kagorithm Code  Each Step Code n Runtime Code 
+===============================================================================================================================
+
+================================ Kago Code ===================================================================================
+
+
+Stored procedures will be called from three places from policy and dynamic events and compute calls 
+
+all request will comes to StoredProcedureRuntimeServiceImpl class executeStoredProcedure method => next version3() method will called  will 
+
+Required kagorithms will be loading from runtime mongodb 
+
+@Document(collection = "#{@tenantProvider.getTenantId()}_kagorithm") =>>>>>>>>>>>>>>>>>>>> Collection Name will be ======>>> project_227_kagorithm
+
+kago context will be loading from @Document(collection = "#{@tenantProvider.getTenantId()}_generated_kagorithmContextData") => project_227_generated_kagorithmContextData based kagorithmId it will be loaded 
+
+
+before calling stored procedure in runtime we can see input and output values along with app user process context 
+
+2023-01-02 11:45:30.788  INFO 3423721 --- [qtp728236551-219] .v.c.s.StoredProcedureRuntimeServiceImpl : 
+
+Dynamic Input params -> name indentID -> value sfarm_cloud_env_684 -> type class java.lang.String -> mode IN
+ 
+2023-01-02 11:45:30.788  INFO 3423721 --- [qtp728236551-219] .v.c.s.StoredProcedureRuntimeServiceImpl : 
+
+Output param -> name Kagorithm_29_errorMessage -> value null -> type class java.lang.String -> mode INOUT            => here output value is null intitiall time 
+
+
+
+List<SPRuntimeInputParam> spExecContext = getContextData(uiEvent, context, processIdentifier,
+				constructContextInput, constructContextOutput, kagorithm, null, processContextWithValues,
+				userContextWithValues, detailedObjects, userContextObject, policyInputParam);
+				
+				
+		String appContext = "{}";
+		String userContext = "{}";
+		String processContext = "{}";
+		String otherContext = "{}";
+		
+		
+		In processContext we are sending the requried object details that will be filled in the kago exection again we are fetchng that object and assign values to runtime details object  
+		
+		
+		ParamName  _otherContext
+		ParamValue  {"processName":"process_UpdateEmpInactive_1574087","stepName":"process_UpdateEmpInactive_1574087_COMPUTE_5","machineId":"local","logginUserId":"system","level":0,"smsVendor":"AmazonService",
+		"debug_log":[],"domainName":"kagami-generated_HRMS_VGS"}
+		
+		
+		
+		all above things will be prepared in the above method which is requied for stored procedures input  
+		
+		then we are preparing the preocedure call with input params and executing the stored procedures
+		
+		then result we are saving back to
+		
+		List<SPRuntimeOutputParam>
+		
+		
+		for(ParameterRegistration registerParam:procedure.getRegisteredParameters()) {
+						if(registerParam.getMode().equals(ParameterMode.OUT) || 
+								registerParam.getMode().equals(ParameterMode.INOUT)) {
+							
+							//String s = (String) procedure.getOutputParameterValue(registerParam.getName());
+							//Object returnParam = procedure.getOutputs().getOutputParameterValue(registerParam.getName());
+							
+							SPRuntimeOutputParam outParam = new SPRuntimeOutputParam();
+							outParam.setParamName(registerParam.getName());
+							outParam.setParamType(registerParam.getParameterType());
+							outParam.setParamMode(registerParam.getMode());
+							outParam.setParamValue(procedure.getOutputs().getOutputParameterValue(registerParam.getName()));
+			
+							outputParamList.add(outParam);
+					}
+		}
+		
+		
+		then we are trying place data to runtime context from keys will be from SPRuntimeInputParam and data we are fethcing from SPRuntimeOutputParam based 
+		on keys which we are checking in SPRuntimeInputParam
+		
+		updated object will be in _processConext that we can check in logs also 
+		
+		log.info(String.format("\nOutput Param %s, Value\n %s", outputParam.getParamName(), outputParam.getParamValue()));
+		
+		
+		
+				
+================================ Kago Code ===================================================================================
+				
+				
+
+================================ Notes ========================================================================================
+
+all kago functions are in system_stored_procedures.sql file 
+
+
+================================ Notes ========================================================================================
+
+============================= Compute Step ========================
+
+
+DECLARE currentDate DATETIME DEFAULT getCurrentDate();
+DECLARE currentYear DOUBLE DEFAULT 0;
+
+
+SET currentYear = getYear(currentDate);
+SET currentYear = (currentYear + 1.0);
+
+==================== Compute step =============================
+
+==================== Calling Kago call From Another Kago =====================================================
+
+SET param0_CreatingDefaultDeclaration = JSON_EXTRACT(_processContext,'$.Itsavings[0]');
+CALL Kagorithm_386_CreatingDefaultDeclaration(_appContext, _userContext, _processContext, _otherContext,param0_CreatingDefaultDeclaration);
+SET _processContext = JSON_SET(_processContext,'$.Itsavings[0]',param0_CreatingDefaultDeclaration);
+
+==================== Calling Kago call From Another Kago =====================================================
+
+==================== IF BLOCK CODE ===========================================================================
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'IF', "15. sec80Dcomp");
+
+IF ((IF(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80Dcomp,'$')),'null') IS NOT NULL,JSON_LENGTH(sec80Dcomp,'$'),0) > 0.0)) THEN 
+
+	CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'IF', "TRUE BLOCK START OF 15. sec80Dcomp");
+	CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'FOREACH', "24. itrSec80D");
+	SET _itr9 = 0; 
+	LOOP__itr9: WHILE(_itr9 < IF(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80Dcomp,'$')),'null') IS NOT NULL,JSON_LENGTH(sec80Dcomp,'$'),0)) DO 
+	SET itrSec80D = JSON_EXTRACT(sec80Dcomp,CONCAT('$','[',_itr9,']')); 
+	CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'DB_CREATE2', "25. sec80D");
+	SET sec80D = NULL ;
+	SET sec80D = ' {"_header":{"entityid":"SectionEightyD_616","entitytype":"EMBEDDED","audited":false,"mode":1,"updateui":0,"relationtype":"","prefix":"","mappedattribute":""},"_details":{"total":0,"maxLimit":0,"deductible":0,"narration":"","declaredAmt":0,"id":"#TEMP_ID"},"_updated":[],"_onetoone":{},"_onetomany":{},"_manytoone":{},"_manytomany":{}} ' ;
+	SET sec80D = REPLACE(sec80D, "#TEMP_ID", CONCAT('temp_',getUIDShort()));
+	CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'COMPUTE', "26. pop sec80D from itrSec80D");
+	SET sec80D = JSON_SET(sec80D,'$._details.eightyDComponentsId',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.id')),'null'));
+	SET sec80D = JSON_SET(sec80D,'$._manytoone.EightyDComponents._details.componentName',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.componentName')),'null'));
+	CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', ' PRINT sec80D.EightyDComponents.componentName', IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80D,'$._manytoone.EightyDComponents._details.componentName')),'null'),''));
+SET sec80D = JSON_SET(sec80D,'$._manytoone.EightyDComponents._details.componentType',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.componentType')),'null'));
+SET itrSec80D = updateHeaderPrefix(itrSec80D,'$','');
+SET sec80D = JSON_SET(sec80D,'$._manytoone.EightyDComponents',IFNULL(NULLIF(JSON_EXTRACT(itrSec80D,'$'),'null'),JSON_OBJECT()));
+SET sec80D = JSON_SET(sec80D,'$._details.total',0.0);
+SET sec80D = JSON_SET(sec80D,'$._details.maxLimit',CAST(IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.maxLimit')),'null'),0) AS DECIMAL(25,3)));
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', ' PRINT sec80D.maxLimit', IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80D,'$._details.maxLimit')),'null'),''));
+SET sec80D = updateHeaderPrefix(sec80D,'$','');
+
+IF(JSON_TYPE(JSON_EXTRACT(contextDeclaration,'$._onetomany.SectionEightyD')) != 'NULL' ) THEN 
+	SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyD',arrayAppendAll(JSON_EXTRACT(contextDeclaration,'$._onetomany.SectionEightyD'),IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT()))); 
+ELSE 
+	IF  JSON_TYPE(IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT())) != 'ARRAY' THEN 
+		SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyD',JSON_ARRAY(IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT())));
+	ELSE 
+		SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyD',IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT())); 
+	END IF;
+END IF;
+SET _itr9 = _itr9+1; 
+
+END WHILE LOOP__itr9; 
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', 'IF', "TRUE BLOCK END OF 15. sec80Dcomp");
+
+END IF; 
+
+==================== IF BLOCK CODE ===================================================================================
+
+==================== Fetch Step ================================
+
+SET _projection = null;
+SET _filters = null;
+SET _filters = '';
+SET _orderBy = null;
+SET _orderBy = '';
+SET _aliasMap = null;
+SET _aliasMap = '{}';
+
+SET _projection = ' {"_header":{"entityid":"FinancialYear_607","entitytype":"MASTER","entityname":"FinancialYear","audited":false,"mode":2,"updateui":0,"relationtype":"","prefix":"","mappedattribute":""},"_details":["masterEntityId","year","entityType","id"],"_updated":["year"],"_relations":{}} ';
+
+
+{
+  "_header": {
+    "entityid": "FinancialYear_607",
+    "entitytype": "MASTER",
+    "entityname": "FinancialYear",
+    "audited": false,
+    "mode": 2,
+    "updateui": 0,
+    "relationtype": "",
+    "prefix": "",
+    "mappedattribute": ""
+  },
+  "_details": [
+    "masterEntityId",
+    "year",
+    "entityType",
+    "id"
+  ],
+  "_updated": [
+    "year"
+  ],
+  "_relations": {
+    
+  }
+}
+
+
+SET _orderBy = '  order by financialyear_607_.id desc  ';
+SET _limit = '  limit 1000 ';
+SET _aliasMap = "{}";
+
+CALL SYS_DEBUG_MESG2(_otherContext, 2, 'Kagorithm_386_CreatingDefaultDeclaration', 'DB_FETCH PROJECTIONS', _projection);
+
+CALL SYS_GET_FETCH_SQL_STMT(_otherContext, _projection, @_fetch_stmt, _aliasMap);
+
+CALL SYS_DEBUG_MESG2(_otherContext, 2, 'Kagorithm_386_CreatingDefaultDeclaration', 'DB_FETCH ALIASMAP', _aliasMap);
+
+SET _filters = ' where (financialyear_607_.year in (:param0_) )  ' ;
+
+SET _policyDetailsMap = null;
+
+SET _policyDetailsMap = JSON_OBJECT('param0_',currentYear);
+
+IF(_policyDetailsMap IS NOT NULL) THEN
+SET _paramJsonKeys = JSON_KEYS(_policyDetailsMap);
+SET _itr1 = 0;	
+WHILE( _itr1 < JSON_LENGTH(_paramJsonKeys)) DO
+SET _paramKey = JSON_UNQUOTE(JSON_EXTRACT(_paramJsonKeys, concat('$[',_itr1,']')));
+SET _paramValue = JSON_EXTRACT(_policyDetailsMap,  concat('$.', _paramKey) );
+IF INSTR(_paramValue,'#IN#') > 0 THEN
+	SET _paramValue = REPLACE(_paramValue, '#IN#','');
+	SET _paramValue = JSON_UNQUOTE(_paramValue);
+END IF;
+SET _filters = REPLACE(_filters, concat(':',_paramKey), _paramValue);
+SET _itr1 = _itr1 + 1;
+END WHILE;
+END IF;
+IF(_aliasMap IS NOT NULL) THEN
+	SET _aliasKeys = JSON_KEYS(_aliasMap);
+	SET _itr2 = 0;	
+	WHILE( _itr2 < JSON_LENGTH(_aliasKeys)) DO
+		SET _aliasKey = JSON_UNQUOTE (JSON_EXTRACT(_aliasKeys, concat('$[',_itr2,']')));
+		SET _tempAliasKeyFinder = "%_aliasKey.%";
+		SET _tempAliasKeyFinder = replace(_tempAliasKeyFinder, "_aliasKey",_aliasKey);
+		SET _aliasValue = JSON_UNQUOTE(JSON_EXTRACT(_aliasMap,  concat('$.', _aliasKey) ));
+				IF(_filters like _tempAliasKeyFinder) THEN
+			SET _filters = REPLACE(_filters, concat(_aliasKey,'.'), concat(_aliasValue,'.' ));
+       END IF;
+		IF(_orderBy like _tempAliasKeyFinder) THEN
+			SET _orderBy = REPLACE(_orderBy, concat(_aliasKey,'.'), concat(_aliasValue,'.' ));
+       END IF;
+		 		SET _itr2 = _itr2 + 1;
+	END WHILE;
+END IF;
+SET @_fetch_stmt = replace(@_fetch_stmt, '#FILTERS#', _filters);
+
+SET @_fetch_stmt = replace(@_fetch_stmt, '#ORDERBY#', _orderBy);
+
+SET @_fetch_stmt = replace(@_fetch_stmt, '#LIMIT#', _limit);
+
+CALL SYS_DEBUG_MESG2(_otherContext, 2, 'Kagorithm_386_CreatingDefaultDeclaration', 'DB_FETCH @_fetch_stmt', @_fetch_stmt);
+
+
+PREPARE _stmt FROM @_fetch_stmt;                                             =========================================>  db call for fetch step 
+EXECUTE _stmt;
+
+
+DEALLOCATE PREPARE _stmt;
+
+IF(@_resultSet is not null) THEN
+	SET currentFY = @_resultSet;
+    CALL SYS_DEBUG_MESG2(_otherContext, 2, 'Kagorithm_386_CreatingDefaultDeclaration', 'DB_FETCH @_resultSet', @_resultSet);
+    SET @_resultSet = NULL;
+ELSE 
+	SET currentFY = JSON_ARRAY();
+ 	CALL SYS_DEBUG_MESG2(_otherContext, 2, 'Kagorithm_386_CreatingDefaultDeclaration', '@_resultSet is NULL', currentFY);
+END IF;
+
+
+==================== Fetch Step ================================
+
+
+
+==================== Itr Step ==================================
+
+SET _itr9 = 0; 
+LOOP__itr9: WHILE(_itr9 < IF(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80Dcomp,'$')),'null') IS NOT NULL,JSON_LENGTH(sec80Dcomp,'$'),0)) DO 
+SET itrSec80D = JSON_EXTRACT(sec80Dcomp,CONCAT('$','[',_itr9,']')); 
+
+==================== Itr Step ==================================
+
+
+==================== Create Step ==================================
+
+
+
+SET sec80D = NULL ;
+
+SET sec80D = ' {"_header":{"entityid":"SectionEightyD_616","entitytype":"EMBEDDED","audited":false,"mode":1,"updateui":0,"relationtype":"","prefix":"","mappedattribute":""},"_details":{"total":0,"maxLimit":0,"deductible":0,"narration":"","declaredAmt":0,"id":"#TEMP_ID"},"_updated":[],"_onetoone":{},"_onetomany":{},"_manytoone":{},"_manytomany":{}} ' ;
+
+
+{
+  "_header": {
+    "entityid": "SectionEightyD_616",
+    "entitytype": "EMBEDDED",
+    "audited": false,
+    "mode": 1,
+    "updateui": 0,
+    "relationtype": "",
+    "prefix": "",
+    "mappedattribute": ""
+  },
+  "_details": {
+    "total": 0,
+    "maxLimit": 0,
+    "deductible": 0,
+    "narration": "",
+    "declaredAmt": 0,
+    "id": "#TEMP_ID"
+  },
+  "_updated": [
+    
+  ],
+  "_onetoone": {
+    
+  },
+  "_onetomany": {
+    
+  },
+  "_manytoone": {
+    
+  },
+  "_manytomany": {
+    
+  }
+}
+
+
+SET sec80D = REPLACE(sec80D, "#TEMP_ID", CONCAT('temp_',getUIDShort()));
+
+SET sec80D = JSON_SET(sec80D,'$._details.eightyDComponentsId',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.id')),'null'));
+
+SET sec80D = JSON_SET(sec80D,'$._manytoone.EightyDComponents._details.componentName',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.componentName')),'null'));
+
+IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80D,'$._manytoone.EightyDComponents._details.componentName')),'null'),''));
+
+SET sec80D = JSON_SET(sec80D,'$._manytoone.EightyDComponents._details.componentType',NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.componentType')),'null'));
+
+SET itrSec80D = updateHeaderPrefix(itrSec80D,'$','');
+
+SET sec80D = JSON_SET(sec80D,'$._manytoone.EightyDComponents',IFNULL(NULLIF(JSON_EXTRACT(itrSec80D,'$'),'null'),JSON_OBJECT()));
+
+SET sec80D = JSON_SET(sec80D,'$._details.total',0.0);
+
+SET sec80D = JSON_SET(sec80D,'$._details.maxLimit',CAST(IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(itrSec80D,'$._details.maxLimit')),'null'),0) AS DECIMAL(25,3)));
+
+CALL SYS_DEBUG_MESG2(_otherContext, 1, 'Kagorithm_386_CreatingDefaultDeclaration', ' PRINT sec80D.maxLimit', IFNULL(NULLIF(JSON_UNQUOTE(JSON_EXTRACT(sec80D,'$._details.maxLimit')),'null'),''));
+SET sec80D = updateHeaderPrefix(sec80D,'$','');
+
+IF(JSON_TYPE(JSON_EXTRACT(contextDeclaration,'$._onetomany.SectionEightyD')) != 'NULL' ) THEN 
+	SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyD',arrayAppendAll(JSON_EXTRACT(contextDeclaration,'$._onetomany.SectionEightyD'),IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT()))); 
+ELSE 
+	IF  JSON_TYPE(IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT())) != 'ARRAY' THEN 
+		SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyD',JSON_ARRAY(IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT())));
+	ELSE 
+		SET contextDeclaration = JSON_SET(contextDeclaration,'$._onetomany.SectionEightyD',IFNULL(NULLIF(JSON_EXTRACT(sec80D,'$'),'null'),JSON_OBJECT())); 
+	END IF;
+END IF;
+
+SET _itr9 = _itr9+1; 
+
+END WHILE LOOP__itr9; 
+
+END IF; 
+
+
+
+
+
+==================== Create Step ==================================
+
+
+
+
+
+
+================================================================= MYSQL FUNCTIONS =============================================================================
+
+SET GLOBAL log_bin_trust_function_creators = 1;
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `deleteAllObjects`(_type VARCHAR(255)) RETURNS int
+    MODIFIES SQL DATA
+BEGIN
+		
+	CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_TABLE(id VARCHAR(255), dataObject JSON, transType VARCHAR(255), con INT, PRIMARY KEY(id,transType,con));
+
+	IF _type IS NOT NULL THEN
+		DELETE FROM TEMP_TABLE WHERE  transType = _type AND con = CONNECTION_ID();
+	END IF; 	
+	
+	RETURN 0;
+END
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `deleteObject`(_type VARCHAR(255),_id VARCHAR(255)) RETURNS int
+    MODIFIES SQL DATA
+BEGIN
+	
+	CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_TABLE(id VARCHAR(255), dataObject JSON, transType VARCHAR(255), con INT, PRIMARY KEY(id,transType,con));
+	IF _id IS NOT NULL AND _type IS NOT NULL THEN
+		DELETE FROM TEMP_TABLE WHERE id = _id AND transType = _type AND con = CONNECTION_ID();
+	END IF; 	
+	
+	RETURN 0;
+
+END
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION  `putObject`(_type VARCHAR(255), _object JSON , _id VARCHAR(255)) RETURNS int
+    MODIFIES SQL DATA
+BEGIN
+	
+	DECLARE tempid VARCHAR(255);
+
+	CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_TABLE(id VARCHAR(255), dataObject JSON, transType VARCHAR(255), con INT, PRIMARY KEY(id,transType,con));
+	
+	IF _id IS NOT NULL  THEN
+		SET tempid = NULL;
+		SELECT id INTO tempid FROM TEMP_TABLE WHERE id = _id AND transType = _type AND con = CONNECTION_ID();
+	
+		IF tempid IS NULL THEN
+			INSERT INTO TEMP_TABLE(id,dataObject,transType,con) VALUES(_id, _object, _type , CONNECTION_ID() ) ;
+		ELSE
+			UPDATE TEMP_TABLE SET dataObject = _object WHERE id = _id AND transType = _type AND con = CONNECTION_ID();
+		END IF;
+	END IF;            
+		
+	RETURN 0;
+	
+
+END
+
+
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `getYear`(inputDate datetime) RETURNS int DETERMINISTIC
+BEGIN 
+RETURN YEAR(inputDate);
+END
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `getCurrentDate`() RETURNS varchar(255) CHARSET utf8mb4 NO SQL
+BEGIN 
+RETURN CAST(TIMESTAMP(CURDATE()) AS CHAR);
+END
+
+
+
+
+================================================================= MYSQL FUNCTIONS =============================================================================
+
