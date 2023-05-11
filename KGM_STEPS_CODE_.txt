@@ -10,7 +10,6 @@
 ==================================================================  VIEW  ======================================================================
 
 
-Hellow 
 ==================================================================  VIEW  ======================================================================
 
 
@@ -21,7 +20,7 @@ Hellow
 ==================================================================  EMAIL  ======================================================================
 
 
- We are sending emails from RuntimeUtilsServiceImpl class sendMailUsingStoreProcedure method it will triiger at every 30 Secs 
+ We are sending emails from RuntimeUtilsServiceImpl class sendMailUsingStoreProcedure method it will trigger at every 30 Secs 
   
  first fetcing data from email_entity table with status=0 ;
 
@@ -31,9 +30,9 @@ Hellow
 
 				we are above code to sending the attachment in the email 
 
- we are sending mails only for last 7 days records 
+    we are sending mails only for last 7 days records 
 
-
+                        import org.apache.commons.mail.HtmlEmail;
 
 	                    HtmlEmail email = new HtmlEmail();
 
@@ -117,14 +116,94 @@ Hellow
  after sending mail we are updating status =1 in email_entity table ;
 
 
-
-
-
-
-
-
-
 ==================================================================  EMAIL  ======================================================================
+
+==================================================================  SMS ==========================================================================
+
+https://api.bigmsgbox.com/message/send-sms?Apikey=RL843FQT&Apisecret=XL3V8GAF&to=917075459707&Message=Dear%20Customer,%20%20Please%20find%20the%20below%20details%20of%20your%20puchase.%20%20Invoice%20No:%20DCGL/SIN/2022/11122%20Date%20:%20Aug%2010,%202022,%205:38:19%20PMGrade:%C2%A0%20CEMENT%20-%2032.5%20R%20GRADENo%20of%20Bags:%20300%20Destination%20:%20HOHOETransporter%20Name:%20ALEXVehi%20cle%20No:%20GR%204537-PDriver%20Name:%20T.T%20%20Regards&from=DCGL
+
+ http://dcglonpremise.kagamierp.com:7070/kagami-studio/#/workarea/project/project_291/process-builder/System_Process_Module/Master_Process_Sub_Module/BP_customerWeeklySms_6696145
+ 
+ 
+
+    
+
+  We are sending emails from RuntimeUtilsServiceImpl class sendSmsUsingStoreProcedure method it will trigger at every 30 Secs 
+  
+ first fetcing data from sms table with status=0 ;
+
+     sms table contains the following attributes information 
+
+	 vendor = bigmsgbox
+	 SmsMessage =
+	 SmsNumber =
+	 DisplayName 
+
+
+     It will iterate over each records of sms table 
+
+
+    based on vedor name from sms table corresponding instance will be returned 
+
+	 public SMSModel getVendor(String VendorType) {
+		if (VendorType == null || VendorType.equalsIgnoreCase(RuntimeGenerationConstants.AMAZON_SERVICE)) {
+			return smsAmazonService;
+		} else if (VendorType.equalsIgnoreCase(RuntimeGenerationConstants.TEXT_LOCAL_SERVICE)) {
+			return smsTextLocalService;
+		} else if (VendorType.equalsIgnoreCase(RuntimeGenerationConstants.DOVE_SERVICE)) {
+			return smsDoveService;
+
+		} else if (VendorType.equalsIgnoreCase(RuntimeGenerationConstants.CONNECT_BIND)) {
+			return smsConnectBindService;
+
+		} else if (VendorType.equalsIgnoreCase(RuntimeGenerationConstants.BIG_MSG_BOX)) {
+			return smsBigMsgBoxService;
+
+		}
+		return null;
+	}
+
+
+    while sending sms we have set below thingings for sms object and those can be fetched from application.properties file 
+
+	String username = environment.getProperty("sms_userName");
+			String password = environment.getProperty("sms_password");
+			String source = environment.getProperty("sms_source");
+			String server = environment.getProperty("sms_URL");
+			message = message.replaceAll("\\s", "%20");
+			mob_no = convertToPhonoNo(mob_no);
+			message = message.replaceAll("\\<.*?\\>", "");
+			message = message.replaceAll("&nbsp;", "");
+			URL sendUrl = new URL(server + "?Apikey=" + username + "&Apisecret=" + password + "&to=" + mob_no
+					+ "&Message=" + message + "&from=" + source);
+			log.info("Send url::"+sendUrl);
+			HttpsURLConnection conn = (HttpsURLConnection) sendUrl.openConnection();
+			InputStream is = conn.getInputStream();
+			InputStreamReader isr = new InputStreamReader(is);
+			BufferedReader br = new BufferedReader(isr);
+
+			String inputLine = null;
+
+			while ((inputLine = br.readLine()) != null) {
+				log.info(inputLine);
+				break;
+			}
+
+			br.close();
+			return inputLine;
+
+
+
+			after that status updating to 1 for records which are sent for customers 
+
+sms_source = DCGL
+sms_password = XL3V8GAF
+sms_userName = RL843FQT
+sms_URL = https://api.bigmsgbox.com/message/send-sms
+sms_vendor = bigmsgbox
+
+
+==================================================================  SMS ==========================================================================
 
 
 ==================================================================  UPDATE  ======================================================================

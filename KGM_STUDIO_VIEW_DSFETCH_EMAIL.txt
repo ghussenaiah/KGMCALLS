@@ -844,22 +844,7 @@ TASK 1
 TASK 1
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-==========================================   SMS CHECK ================================================================================================================
 
-https://api.bigmsgbox.com/message/send-sms?Apikey=RL843FQT&Apisecret=XL3V8GAF&to=917075459707&Message=Dear%20Customer,%20%20Please%20find%20the%20below%20details%20of%20your%20puchase.%20%20Invoice%20No:%20DCGL/SIN/2022/11122%20Date%20:%20Aug%2010,%202022,%205:38:19%20PMGrade:%C2%A0%20CEMENT%20-%2032.5%20R%20GRADENo%20of%20Bags:%20300%20Destination%20:%20HOHOETransporter%20Name:%20ALEXVehi%20cle%20No:%20GR%204537-PDriver%20Name:%20T.T%20%20Regards&from=DCGL
-
- http://dcglonpremise.kagamierp.com:7070/kagami-studio/#/workarea/project/project_291/process-builder/System_Process_Module/Master_Process_Sub_Module/BP_customerWeeklySms_6696145
- 
- 
- 
- 
-sms_source = DCGL
-sms_password = XL3V8GAF
-sms_userName = RL843FQT
-sms_URL = https://api.bigmsgbox.com/message/send-sms
-sms_vendor = bigmsgbox
-
- 
 
 =======================================================================================================================================================================
 
