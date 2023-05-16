@@ -103,8 +103,200 @@ targetprocess means it represent the it will rediect to the process when we clic
 
 ================================================================== WHILE USER LOGIN ============================================================
 
+================================================================== BPM EXECUTION ===============================================================
+
+
+
+CreateProcees()
+
+Here it will create processDataController with properties 
+
+	processInfo.setProcessName(bpmContext.processName);
+	processInfo.setParentProcessName(inputData.parentProcessName);
+	processInfo.setProcessType(ProcessType.EXTERNAL_PROCESS);
+
+
+	createAuxiliaryEntities(uiEvent, bpmContext.processName, uniquePID, processIdentifier);  AuxiliaryEntities entity object will be created added to DetailedObject
+
+	processDataController.createProcCtrlData(uniquePID, TreeProcessState.IDLE, processInfo);  it will be created with IDLE state 
+
+
+
+executeProcess()
+
+onprocessIdle()
+onprocessCreated()
+onprocessRunning()
+
+
+================================================================== BPM EXECUTION ===============================================================
+
+================================================================== VERB EXECUTION ===============================================================
+================================================================== VERB EXECUTION ===============================================================
+
+==================================================================  LINK  ======================================================================
+
+
+BusinessProcessActionResolver
+
+link construct will be called from above class 
+
+
+public TreeConstructInputOutputPack handleConstruct(ConstructTypes type, TreeConstructInputOutputPack inputPack)
+			throws Exception {
+ 		TreeConstructInputOutputPack constructOutput = null;
+		if (type.equals(ConstructTypes.VERB) || type.equals(ConstructTypes.COMPUTE)) {
+			constructOutput = verbActionHandler.handleConstruct(inputPack);
+		} else if (type.equals(ConstructTypes.SWITCH)) {
+			constructOutput = switchActionHandler.handleConstruct(inputPack);
+		} else if (type.equals(ConstructTypes.LINK)) {
+			constructOutput = linkHandler.handleConstruct(inputPack);                 ======> it will start execution here 
+		} else if (type.equals(ConstructTypes.INVOKE)) {
+			constructOutput = invokeHandler.handleConstruct(inputPack);
+		} else if (type.equals(ConstructTypes.FOREACH)) {
+			constructOutput = forEachActionHandler.handleConstruct(inputPack);
+		} else if (type.equals(ConstructTypes.UIINPUT)) {
+			constructOutput = uiInputActionHandler.handleConstruct(inputPack);
+		} else if (type.equals(ConstructTypes.UPLOAD)) {
+			constructOutput = uploadUIInputActionHandler.handleConstruct(inputPack);
+		}
+		return constructOutput;
+	}
+	
+
+
+LinkMetaData metaData = linkDao.findForEvent(context.processName, context.verbName); by using processName and stepName metaDta will be retrived 
+
+
+Object link = entityUtil.getEntityClassFromEntityId(ClassConstants.ENTITY_ID_LINK).newInstance();    // link object will be intialized 
+
+there will be policy will be created need to check no of rules in the policy for link verb 
+
+
+both detailed object and empty link object will be sent for policy fire 
+
+
+import com.bcv.kagami.core.utils.cache.runtimecontext.UserContext
+import com.bcv.kagami.core.utils.cache.runtimecontext.ApplicationContext
+import com.bcv.kagami.modules.model.Link
+
+dialect "mvel"
+
+declare Local_policy_557
+index :int
+clear : boolean
+end
+
+rule "create"
+salience 11
+when
+then
+    Local_policy_557 local = new Local_policy_557();
+    local.clear = true;
+    insert(local);
+end
+
+
+
+rule "rule_1"
+salience 10
+    when
+        sqlResult:SqlResult()
+        subProcessUtils:KSubProcessListUtils()
+        policyUtils:PolicyUtils()
+        txnWrapper:TxnWrapper()
+        txnInfoHolder:TxnInfoHolder()
+        entityDefaultValueRepository:EntityDefaultValueRepository()
+        processIdentifier : ProcessIdentifier()
+        beanUtils: KagamiBeanUtils()
+        spRuntimeService :StoredProcedureRuntimeService()
+        ruleOutputContext : RuleOutputContext()
+        resolveType:ResolveType()
+                uiEvent:TreeUIEvent();
+
+        local:Local_policy_557()
+                                        link : Link()
+                                        eval(true);
+
+    then
+                System.out.println("performing compute: policy_557->rule_1");
+                List properties = new ArrayList();
+                        Map objects=new HashMap();
+                                       objects.put("Link",link);
+
+									    objects.put("Grn_5",Grn);
+
+
+
+                                        ( link.user = Grn.createdby );
+                                        ( link.role = ( "GM" ) );
+    end
+
+      
+
+
+after policy file link object will be assigned with role,user,hierarchy values 
+
+based on role and user or hierarchy notifications wil be created 
+
+
+To send notification to user or not it depends on sendnotifiction Y or N in the user settings table 
+
+
+
+
+
+
+
+
+
+
+==================================================================  LINK  ======================================================================
+
+
 
 ==================================================================  CREATE  ======================================================================
+
+ONSEARCH Working Procedure 
+
+
+
+process_creategrn_54_CREATE_186  
+
+
+
+
+TreeProcessExecutor class where buildConstructInputPack will be called to construct required object with detail  for VerbController 
+
+TreeConstructNode constructNode             ==> it is required for stepName 
+TreeProcessCtrlExecContext processContext   ==> it is required for processName 
+
+String uniqueEvent = processContext.processName.concat(StringConstants.DOT).concat(constructNode.getName());
+
+
+
+ 
+
+
+MasterFetchDAO
+
+by using context.getProcessName() + StringConstants.DOT + context.getVerbName()
+
+we are making unique id based on this it will fetch data from metadata 
+
+final List<FetchInput> fetchInputs = fetchMetaDataHelper.getFetchInputs(context); 
+
+ProjectionContext projectionContext = fetchMetaDataHelper.getProjectionContext(context);
+
+
+
+
+
+
+ 
+
+
+
 
 
 ==================================================================  CREATE  ======================================================================
